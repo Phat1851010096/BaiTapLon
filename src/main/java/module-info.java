@@ -1,5 +1,4 @@
 module com.mycompany.baitaplon {
-//    requires javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
     requires java.base;

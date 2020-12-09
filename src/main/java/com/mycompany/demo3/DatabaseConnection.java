@@ -23,7 +23,7 @@ public class DatabaseConnection {
          String databaseName = "qlthuvien";
          String url ="jdbc:mysql://127.0.0.1:3306/?user=root/qlthuvien" + databaseName ;
          String databaseUser = "root";
-         String databasePassword = "";
+         String databasePassword = "123456";
        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

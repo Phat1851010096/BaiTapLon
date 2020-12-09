@@ -1,6 +1,5 @@
-com\mycompany\demo3\SecondaryController.class
+com\mycompany\demo3\HomePageController.class
 com\mycompany\demo3\DatabaseConnection.class
 module-info.class
 com\mycompany\demo3\App.class
 com\mycompany\demo3\LoginController.class
-com\mycompany\demo3\PrimaryController.class

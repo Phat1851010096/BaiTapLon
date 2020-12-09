@@ -88,7 +88,7 @@ public class LoginController implements Initializable {
     
     @FXML
     private void switchToHomePage() throws IOException {
-        App.setRoot("secondary");
+        App.setRoot("homePage");
     }
     //
     public void validateLogin() throws SQLException, IOException, InterruptedException{

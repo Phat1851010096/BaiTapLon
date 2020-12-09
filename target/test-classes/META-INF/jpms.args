@@ -1,0 +1,4 @@
+--patch-module
+com.mycompany.baitaplon=_
+--add-reads
+com.mycompany.baitaplon=ALL-UNNAMED
