@@ -36,8 +36,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws ParseException {
-        BookServices.QL_timKiemID(9);
-        launch();
+        BookServices.console_searchBook("", "", "20", "");
+        System.out.println("OK!");
+       // launch();
     }
     
 }

@@ -24,7 +24,7 @@ public class BookServices {
     private static final Connection conn = Utils.getConn();
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     
-    public static void QL_dsSach() throws ParseException {
+    public static void console_dsSach() throws ParseException {
         List<Book> ds = new ArrayList<>();
         ds = BookServices.getBooks();
         
@@ -35,9 +35,20 @@ public class BookServices {
         }
     }
     
-    public static void QL_timKiemID(int id) {
+    public static void console_timKiemID(int id) {
         Book b = getBookById(id);
         System.out.println(b.toString());
+    }
+    
+    public static void console_searchBook(String bookName, String authorName, String publishYear, String category) {
+        List<Book> ds = new ArrayList<>();
+        ds = BookServices.searchBook(bookName,authorName, publishYear, category);
+        
+        for (Book b1 : ds) {
+            System.out.println(b1.toString());
+
+            System.out.println("");
+        }
     }
     
     public static List<Book> getBooks () throws ParseException {
@@ -161,5 +172,47 @@ public class BookServices {
         
         
         return flag;
+    }
+    
+    public static List<Book> searchBook(String bookName, String authorName, String publishYear, String category) {   
+//Tên sách, tên tác giả, năm xuât bản, danh mục
+         List<Book> listBook = new ArrayList<>();
+         
+         if (bookName == null) bookName ="";
+         if (authorName == null) authorName = "";
+         if (publishYear == null) publishYear = "";
+         if (category == null) category = ""; 
+        
+        try {   
+            Statement stm = conn.createStatement();
+            String sqlQuerry = "SELECT distinct B.*, BA.AuthorName\n"
+            + "FROM qlthuvien.books_authors BA, qlthuvien.books B, qlthuvien.authors A\n"
+            + "WHERE B.BookID = BA.BookID AND A.AuthorID = BA.AuthorID AND\n"
+            + "(B.BookName LIKE \"%" + bookName + "%\" AND A.AuthorName LIKE \"%" + authorName + "%\""
+            + "AND year(B.PublishYear) LIKE \"%" + publishYear + "%\" AND B.Category LIKE \"% " + category +"%\" ) ";
+            
+            ResultSet rs = stm.executeQuery(sqlQuerry);
+            
+            while(rs.next()) {
+                int id = rs.getInt("BookID");
+                String name = rs.getString("BookName");
+                String category2 = rs.getString("Category");
+                String description = rs.getString("Description");
+                Date publishYear2 = rs.getDate("PublishYear");
+                String publishCompany = rs.getString("PublishCompany");
+                Date entryDate = rs.getDate("EntryDate");
+                String position = rs.getString("BookPosition");
+                
+                Book b = new Book(id, name, category2, description, publishYear2, publishCompany, entryDate, position);
+                listBook.add(b);
+
+
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(BookServices.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+
+        return listBook;
     }
 }
