@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="741.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="84.0" prefWidth="611.0" style="-fx-background-color: lightblue;">
+         <children>
+            <Text fill="#c90707" layoutX="35.0" layoutY="62.0" stroke="#dfe230" strokeWidth="2.0" text="Tìm Kiếm" textAlignment="CENTER" wrappingWidth="502.82647705078125">
+               <font>
+                  <Font name="System Bold Italic" size="50.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="81.0" fitWidth="139.0" layoutX="612.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/pngtree-generalmagnifiermagnifysearch-abstract-circle-background-f-png-image_1494545-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TitledPane animated="false" text="Manager">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="11.0" layoutY="6.0" text="Tên Sách :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="11.0" layoutY="44.0" text="Thể loại :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="9.0" layoutY="81.0" text="Nhà phát hành :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="11.0" layoutY="122.0" text="Năm xuất bản :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <TextField alignment="TOP_LEFT" layoutX="133.0" layoutY="6.0" prefHeight="25.0" prefWidth="181.0" promptText="Tên Sách" />
+                  <ComboBox layoutX="133.0" layoutY="44.0" prefHeight="25.0" prefWidth="181.0" promptText="Thể loại" />
+                  <ComboBox layoutX="133.0" layoutY="77.0" prefHeight="25.0" prefWidth="182.0" promptText="Nhà phát hành" />
+                  <TextField layoutX="134.0" layoutY="118.0" prefHeight="25.0" prefWidth="184.0" promptText="Năm xuất bản" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TableView prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="54.333343505859375" text="Mã sách" />
+          <TableColumn prefWidth="108.66665649414062" text="Tên sách" />
+            <TableColumn prefWidth="87.66668701171875" text="Thể loại" />
+            <TableColumn prefWidth="113.33331298828125" text="Nhà phát hành" />
+            <TableColumn prefWidth="110.66668701171875" text="Mô tả" />
+            <TableColumn prefWidth="98.33331298828125" text="Năm xuất bản" />
+            <TableColumn prefWidth="66.6666259765625" text="Số lượng" />
+            <TableColumn prefWidth="102.6666259765625" text="Ngày nhập hàng" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>
