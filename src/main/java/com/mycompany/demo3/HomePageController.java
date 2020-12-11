@@ -26,9 +26,9 @@ public class HomePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        File homeFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/BaiTapLon/src/Images/home.png");
-        Image homeImage = new Image(homeFile.toURI().toString());
-        homeImageView.setImage(homeImage);
+//        File homeFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3/Images/home.png");
+//        Image homeImage = new Image(homeFile.toURI().toString());
+//        homeImageView.setImage(homeImage);
     }  
     
     @FXML

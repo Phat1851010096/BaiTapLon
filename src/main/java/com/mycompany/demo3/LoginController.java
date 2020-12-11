@@ -40,17 +40,18 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        File brandingFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/Images/Logo.png");
-        Image brandingImage = new Image(brandingFile.toURI().toString());
-        brandingImageView.setImage(brandingImage);
-        
-        File lockFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/Images/o_khoa.png");
-        Image lockImage = new Image(lockFile.toURI().toString());
-        lockImageView.setImage(lockImage);
-        
-        File bookFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/Images/123.png");
-        Image bookImage = new Image(bookFile.toURI().toString());
-        bookImageView.setImage(bookImage);
+//        File brandingFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3/Images/Logo.png");
+//        //C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3
+//        Image brandingImage = new Image(brandingFile.toURI().toString());
+//        brandingImageView.setImage(brandingImage);
+//        
+//        File lockFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3/Images/o_khoa.png");
+//        Image lockImage = new Image(lockFile.toURI().toString());
+//        lockImageView.setImage(lockImage);
+//        
+//        File bookFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3/Images/123.png");
+//        Image bookImage = new Image(bookFile.toURI().toString());
+//        bookImageView.setImage(bookImage);
         // TODO
     }    
     
@@ -110,8 +111,6 @@ public class LoginController implements Initializable {
                 loginMessageLabel.setText("Invalid login, Please try again!");
             }
         }
-    }
-    
-    
+    } 
 }
 
