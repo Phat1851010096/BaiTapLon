@@ -5,12 +5,16 @@
  */
 package com.mtd.services;
 
+import com.mtd.pojo.Book;
+import com.mysql.cj.protocol.Resultset;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 /**
  *
@@ -37,4 +41,6 @@ public class Utils {
     public static Connection getConn() {
         return conn;
     }
+    
+    
 }

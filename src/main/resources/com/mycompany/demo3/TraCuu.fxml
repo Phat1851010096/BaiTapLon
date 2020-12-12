@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="930.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1024.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.TraCuuController">
    <children>
       <AnchorPane prefHeight="73.0" prefWidth="930.0" style="-fx-background-color: lightblue;">
          <children>
@@ -62,9 +62,9 @@
                   <ComboBox layoutX="133.0" layoutY="157.0" prefHeight="25.0" prefWidth="182.0" />
                   <AnchorPane layoutX="339.0" layoutY="144.0" prefHeight="34.0" prefWidth="50.0">
                      <children>
-                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="-10.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" style="-fx-background-color: #e4f1fe;" text="Search">
+                        <Button mnemonicParsing="false">
                            <graphic>
-                              <ImageView disable="true" fitHeight="44.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@Images/A.png" />
                                  </image>
@@ -73,29 +73,31 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="148.0" layoutY="196.0" prefHeight="63.0" prefWidth="167.0">
+                  <AnchorPane layoutX="174.0" layoutY="206.0" prefHeight="54.0" prefWidth="144.0">
                      <children>
-                        <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="49.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="111.0" style="-fx-background-color: lightgray; -fx-text-fill: Red; -fx-border-color: black;" text="Back">
+                        <Button layoutX="-4.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="124.0" text="Back" textFill="#e11a1a">
+                           <graphic>
+                              <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Images/images-removebg-preview-removebg-preview.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                            <font>
-                              <Font name="System Bold" size="20.0" />
+                              <Font size="18.0" />
                            </font>
                         </Button>
-                        <ImageView disable="true" fitHeight="40.0" fitWidth="43.0" layoutX="57.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Images/images-removebg-preview.png" />
-                           </image>
-                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="426.0" layoutY="5.0" prefHeight="228.0" prefWidth="476.0">
                      <children>
-                        <TableView layoutX="-1.0" layoutY="-3.0" prefHeight="253.0" prefWidth="480.0">
+                        <TableView layoutX="-1.0" layoutY="-3.0" prefHeight="253.0" prefWidth="486.0" style="-fx-border-color: black;">
                           <columns>
                             <TableColumn prefWidth="99.8887939453125" text="Tên Sách" />
                               <TableColumn prefWidth="83.1112060546875" text="Tác giả " />
                               <TableColumn prefWidth="115.0" text="Thể loại" />
                               <TableColumn prefWidth="115.0" text="Năm Xuất bản" />
-                              <TableColumn prefWidth="65.0" text="Huỷ">
+                              <TableColumn prefWidth="70.0" text="Huỷ">
                                  <graphic>
                                     <CheckBox mnemonicParsing="false" />
                                  </graphic>
@@ -109,17 +111,18 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <TableView prefHeight="311.0" prefWidth="930.0">
+      <TableView fx:id="tableBooks" prefHeight="311.0" prefWidth="930.0">
         <columns>
-          <TableColumn prefWidth="54.333343505859375" text="Mã sách" />
-          <TableColumn prefWidth="108.66665649414062" text="Tên sách" />
+          <TableColumn fx:id="col_BookID" prefWidth="69.0" text="Mã sách" />
+          <TableColumn fx:id="col_BookName" prefWidth="95.0" text="Tên sách" />
             <TableColumn prefWidth="75.0" text="Tác giả" />
-            <TableColumn prefWidth="87.66668701171875" text="Thể loại" />
-            <TableColumn prefWidth="113.33331298828125" text="Nhà phát hành" />
-            <TableColumn prefWidth="110.66668701171875" text="Mô tả" />
-            <TableColumn prefWidth="166.55560302734375" text="Năm xuất bản" />
-            <TableColumn prefWidth="150.0" text="Ngày nhập hàng" />
-            <TableColumn prefWidth="60.0">
+            <TableColumn fx:id="col_Category" prefWidth="87.66668701171875" text="Thể loại" />
+            <TableColumn fx:id="col_Description" prefWidth="113.33331298828125" text="Mô tả" />
+            <TableColumn fx:id="col_PublishYear" prefWidth="110.66668701171875" text="Năm xuất bản" />
+            <TableColumn fx:id="col_PublishCompany" prefWidth="166.55560302734375" text="Nhà phát hành" />
+            <TableColumn fx:id="col_EntryDate" prefWidth="128.0" text="Ngày nhập hàng" />
+            <TableColumn fx:id="col_BookPosition" prefWidth="82.0" text="Vị trí sách" />
+            <TableColumn prefWidth="75.0">
                <graphic>
                   <CheckBox mnemonicParsing="false" />
                </graphic>
