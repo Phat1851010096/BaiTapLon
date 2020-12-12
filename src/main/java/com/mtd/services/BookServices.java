@@ -215,4 +215,16 @@ public class BookServices {
 
         return listBook;
     }
+    
+    public static void deleteTempInMySQL(int bookID) { 
+       
+        try {           
+            String deleteTempTable = "DELETE FROM temp";
+            PreparedStatement pstm = conn.prepareStatement(deleteTempTable);
+            pstm.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println("Can't delete temp table!");
+        }
+    }
+    
 }
