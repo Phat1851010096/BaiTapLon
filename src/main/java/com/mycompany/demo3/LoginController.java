@@ -70,6 +70,17 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField passwordTextField;
     
+    @FXML
+    private void switchToHomePageLogout() throws IOException {
+        App.setRoot("homePageLogout");
+    }
+    
+    @FXML
+    private void switchToHomePage() throws IOException {
+        App.setRoot("homePage");
+    }
+    
+    
     //
     public void loginButtonOnAction(ActionEvent event) throws SQLException, IOException, InterruptedException{
         if(usernameTextField.getText().isBlank() == false //Kiem tra username va password co rong hay khong
@@ -81,21 +92,19 @@ public class LoginController implements Initializable {
     }
     
     //
-    public void cancelButtonOnAction(ActionEvent event){
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
+    public void cancelButtonOnAction(ActionEvent event) throws IOException{
+//        Stage stage = (Stage) cancelButton.getScene().getWindow();
+//        stage.close();
+          switchToHomePage();
     }
     
     
-    @FXML
-    private void switchToHomePage() throws IOException {
-        App.setRoot("homePage");
-    }
+    
     //
     public void validateLogin() throws SQLException, IOException, InterruptedException{
         DatabaseConnection conn = new DatabaseConnection();//
         Connection connectDB = conn.getConnection();
-        String veryfyLogin = "SELECT Count(1) FROM qlthuvien.user_accout WHERE username = '" + 
+        String veryfyLogin = "SELECT Count(1) FROM qlthuvien.user_account WHERE username = '" + 
                 usernameTextField.getText() + "'AND password ='" + passwordTextField.getText() + "'";
         //?????
         Statement statement = connectDB.createStatement();//
@@ -106,7 +115,7 @@ public class LoginController implements Initializable {
             if(queryResult.getInt(1) == 1){
                 loginMessageLabel.setText("Chúc mừng, Bạn đăng nhập thành công!");
                 
-                switchToHomePage();
+                switchToHomePageLogout();
             } else{
                 loginMessageLabel.setText("Invalid login, Please try again!");
             }

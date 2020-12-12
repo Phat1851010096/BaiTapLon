@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="741.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="842.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="84.0" prefWidth="611.0" style="-fx-background-color: lightblue;">
          <children>
@@ -59,14 +59,14 @@
       </TitledPane>
       <TableView prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn prefWidth="54.333343505859375" text="Mã sách" />
-          <TableColumn prefWidth="108.66665649414062" text="Tên sách" />
+          <TableColumn prefWidth="78.0" text="Mã sách" />
+          <TableColumn prefWidth="86.0" text="Tên sách" />
             <TableColumn prefWidth="87.66668701171875" text="Thể loại" />
             <TableColumn prefWidth="113.33331298828125" text="Nhà phát hành" />
             <TableColumn prefWidth="110.66668701171875" text="Mô tả" />
-            <TableColumn prefWidth="98.33331298828125" text="Năm xuất bản" />
-            <TableColumn prefWidth="66.6666259765625" text="Số lượng" />
-            <TableColumn prefWidth="102.6666259765625" text="Ngày nhập hàng" />
+            <TableColumn prefWidth="125.0" text="Năm xuất bản" />
+            <TableColumn prefWidth="74.0" text="Số lượng" />
+            <TableColumn prefWidth="161.0" text="Ngày nhập hàng" />
         </columns>
       </TableView>
    </children>

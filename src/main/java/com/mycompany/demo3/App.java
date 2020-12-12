@@ -11,6 +11,7 @@ import java.io.IOException;
 import com.mtd.pojo.*;
 import com.mtd.services.*;
 import java.text.ParseException;
+import javafx.scene.layout.Region;
 /**
  * JavaFX App
  */
@@ -20,7 +21,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"), 640, 480);
+        scene = new Scene(loadFXML("homePage"), Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
@@ -36,9 +37,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws ParseException {
-        BookServices.console_searchBook("", "", "20", "");
-        System.out.println("OK!");
-       // launch();
+//        BookServices.console_searchBook("", "", "20", "");
+//        System.out.println("OK!");
+        launch();
     }
     
 }

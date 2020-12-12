@@ -6,12 +6,15 @@
 package com.mycompany.demo3;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -31,7 +34,16 @@ public class HomePageController implements Initializable {
 //        homeImageView.setImage(homeImage);
     }  
     
+    public void loginPageOnAction(ActionEvent event) throws IOException{
+        switchToLoginPage();
+    }
+    
     @FXML
     private ImageView homeImageView;
+    
+    @FXML
+    private void switchToLoginPage() throws IOException {
+        App.setRoot("login");
+    }
     
 }
