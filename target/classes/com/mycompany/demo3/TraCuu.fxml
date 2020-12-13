@@ -62,7 +62,7 @@
                   <ComboBox fx:id="cbHienThi" layoutX="133.0" layoutY="157.0" prefHeight="25.0" prefWidth="182.0" />
                   <AnchorPane layoutX="339.0" layoutY="144.0" prefHeight="34.0" prefWidth="50.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#searchOnAction">
+                        <Button mnemonicParsing="false">
                            <graphic>
                               <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

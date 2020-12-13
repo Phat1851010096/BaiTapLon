@@ -40,15 +40,15 @@ public class DatabaseConnection {
         return databaseLink;
     }
     
-    public static ObservableList<Book> getDatabook(){
+    public static ObservableList<Books> getDatabook(){
         Connection conn =  getConn();
-        ObservableList<Book> list = FXCollections.observableArrayList();
+        ObservableList<Books> list = FXCollections.observableArrayList();
         try {
             PreparedStatement ps = conn.prepareStatement("select * from books");
             ResultSet rs =  ps.executeQuery();
             
             while(rs.next()){
-                list.add(new Book(Integer.parseInt(rs.getString("BookID")), 
+                list.add(new Books(Integer.parseInt(rs.getString("BookID")), 
                         rs.getString("BookName"), rs.getString("Category"), 
                         rs.getString("Description"), rs.getDate("PublishYear"), 
                         rs.getString("PublishCompany"), rs.getDate("EntryDate"), 

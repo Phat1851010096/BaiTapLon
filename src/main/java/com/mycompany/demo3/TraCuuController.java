@@ -82,7 +82,7 @@ public class TraCuuController implements Initializable {
         col_PublishCompany.setCellValueFactory(new PropertyValueFactory<Books, String>("PublishCompany"));
         col_EntryDate.setCellValueFactory(new PropertyValueFactory<Books, Date>("EntryDate"));
         col_BookPosition.setCellValueFactory(new PropertyValueFactory<Books, String>("BookPosition"));
-        
+          
         listBook =  DatabaseConnection.getDatabook();
         tableBooks.setItems(listBook);
         
@@ -99,8 +99,8 @@ public class TraCuuController implements Initializable {
     
     public void searchOnAction(ActionEvent event){
         //Tìm kiếm và lọc 
-        ObservableList<Books> dataList = FXCollections.observableArrayList();
-        FilteredList<Books> filteredData = new FilteredList<>(dataList, b -> true);
+//        ObservableList<Books> dataList = FXCollections.observableArrayList();
+        FilteredList<Books> filteredData = new FilteredList<>(listBook, b -> true);
         
         //Lọc khi fill có thay đổi
         filterTenSach.textProperty().addListener((observable, oldValue, newValue) ->{
@@ -126,9 +126,9 @@ public class TraCuuController implements Initializable {
                 
         });
         
-//        SortedList<Books> sortedData = new SortedList<>(filteredData);
-//        sortedData.comparatorProperty().bind(tableBooks.comparatorProperty());
-//        tableBooks.setItems(sortedData);
+        SortedList<Books> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tableBooks.comparatorProperty());
+        tableBooks.setItems(sortedData);
    
     }
-}
+ }
