@@ -5,6 +5,7 @@
  */
 package com.mycompany.demo3;
 
+import com.mtd.pojo.*;
 import static com.mtd.services.Utils.getConn;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,15 +40,15 @@ public class DatabaseConnection {
         return databaseLink;
     }
     
-    public static ObservableList<Books> getDatabook(){
+    public static ObservableList<Book> getDatabook(){
         Connection conn =  getConn();
-        ObservableList<Books> list = FXCollections.observableArrayList();
+        ObservableList<Book> list = FXCollections.observableArrayList();
         try {
             PreparedStatement ps = conn.prepareStatement("select * from books");
             ResultSet rs =  ps.executeQuery();
             
             while(rs.next()){
-                list.add(new Books(Integer.parseInt(rs.getString("BookID")), 
+                list.add(new Book(Integer.parseInt(rs.getString("BookID")), 
                         rs.getString("BookName"), rs.getString("Category"), 
                         rs.getString("Description"), rs.getDate("PublishYear"), 
                         rs.getString("PublishCompany"), rs.getDate("EntryDate"), 

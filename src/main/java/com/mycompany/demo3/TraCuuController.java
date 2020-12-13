@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -121,8 +122,13 @@ public class TraCuuController implements Initializable {
                     else
                         return false;             
                 });
-
+                
+                
         });
+        
+//        SortedList<Books> sortedData = new SortedList<>(filteredData);
+//        sortedData.comparatorProperty().bind(tableBooks.comparatorProperty());
+//        tableBooks.setItems(sortedData);
    
     }
 }
