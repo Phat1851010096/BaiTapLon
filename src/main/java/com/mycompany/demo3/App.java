@@ -21,7 +21,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("homePage"), Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
+        scene = new Scene(loadFXML("TraCuu"), Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

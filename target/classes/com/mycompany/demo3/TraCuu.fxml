@@ -51,15 +51,15 @@
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></Label>
-                  <TextField alignment="TOP_LEFT" layoutX="133.0" layoutY="6.0" prefHeight="25.0" prefWidth="181.0" promptText="Tên Sách" />
-                  <ComboBox layoutX="133.0" layoutY="44.0" prefHeight="25.0" prefWidth="181.0" promptText="Thể loại" />
+                  <TextField fx:id="filterTenSach" alignment="TOP_LEFT" layoutX="133.0" layoutY="6.0" prefHeight="25.0" prefWidth="181.0" promptText="Tên Sách" />
+                  <ComboBox fx:id="cbTheLoai" layoutX="133.0" layoutY="44.0" prefHeight="25.0" prefWidth="181.0" promptText="Thể loại" />
                   <TextField layoutX="134.0" layoutY="118.0" prefHeight="25.0" prefWidth="184.0" promptText="Năm xuất bản" />
                   <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="11.0" layoutY="159.0" prefHeight="20.0" prefWidth="107.0" text="Hiển thị :">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox layoutX="133.0" layoutY="157.0" prefHeight="25.0" prefWidth="182.0" />
+                  <ComboBox fx:id="cbHienThi" layoutX="133.0" layoutY="157.0" prefHeight="25.0" prefWidth="182.0" />
                   <AnchorPane layoutX="339.0" layoutY="144.0" prefHeight="34.0" prefWidth="50.0">
                      <children>
                         <Button mnemonicParsing="false">
@@ -75,7 +75,7 @@
                   </AnchorPane>
                   <AnchorPane layoutX="174.0" layoutY="206.0" prefHeight="54.0" prefWidth="144.0">
                      <children>
-                        <Button layoutX="-4.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="124.0" text="Back" textFill="#e11a1a">
+                        <Button layoutX="-4.0" mnemonicParsing="false" onAction="#homePageLogoutOnAction" prefHeight="42.0" prefWidth="124.0" text="Back" textFill="#e11a1a">
                            <graphic>
                               <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
