@@ -7,6 +7,7 @@ package com.mtd.pojo;
 
 import com.mtd.pojo.Author;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -40,7 +41,8 @@ public class Book {
     private String publishCompany = null;
     private Date entryDate = null;
     private String bookPosition = null;
-
+    private Author author = null;
+    
     public Book (){
     }
     
@@ -70,6 +72,12 @@ public class Book {
 
     }
     
+   public Book(int bookID,String bookName, String category, 
+            String description, Date publishYear, String publishCompany, 
+            Date entryDate, String bookPosition, Author author) {
+        this(bookID, bookName, category, description, publishYear, publishCompany, entryDate, bookPosition);
+        this.author = author;
+   }
     
     @Override
     public String toString() {
@@ -93,6 +101,7 @@ public class Book {
              str.append(String.format(" - Entry date: %s", "NaN"));
         }
         str.append(String.format(" - Book position: %s", this.getBookPosition()));
+        str.append(String.format(" - Author: %s", this.author.getAuthorName()));
         return str.toString(); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -221,5 +230,20 @@ public class Book {
     public void setBookPosition(String bookPosition) {
         this.bookPosition = bookPosition;
     }
+
+    /**
+     * @return the author
+     */
+    public Author getAuthor() {
+        return author;
+    }
+
+    /**
+     * @param author the author to set
+     */
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
     
 }

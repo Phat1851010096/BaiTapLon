@@ -56,7 +56,10 @@ public class BookServices {
         
         try {   
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("Select * From Books");
+            ResultSet rs = stm.executeQuery("SELECT distinct B.*, A.*\n" +
+"FROM qlthuvien.books_authors BA, qlthuvien.books B, qlthuvien.authors A\n" +
+"WHERE B.BookID = BA.BookID AND A.AuthorID = BA.AuthorID\n" +
+"ORDER BY B.BookID ASC");
 
 
 //            while (rs.next()) {
@@ -82,17 +85,21 @@ public class BookServices {
 //                listBook.add(b);
 //            }
 //            
-            while(rs.next()) {
-                int id = rs.getInt("BookID");
-                String name = rs.getString("BookName");
-                String category = rs.getString("Category");
-                String description = rs.getString("Description");
-                Date publishYear = rs.getDate("PublishYear");
-                String publishCompany = rs.getString("PublishCompany");
-                Date entryDate = rs.getDate("EntryDate");
-                String position = rs.getString("BookPosition");
+           while(rs.next()) {
+                int id = rs.getInt("B.BookID");
+                String name = rs.getString("B.BookName");
+                String category = rs.getString("B.Category");
+                String description = rs.getString("B.Description");
+                Date publishYear = rs.getDate("B.PublishYear");
+                String publishCompany = rs.getString("B.PublishCompany");
+                Date entryDate = rs.getDate("B.EntryDate");
+                String position = rs.getString("B.BookPosition");
                 
-                Book b = new Book(id, name, category, description, publishYear, publishCompany, entryDate, position);
+                Author author = new Author();
+                author.setAuthorID(rs.getInt("A.AuthorID"));
+                author.setAuthorName(rs.getString("A.AuthorName"));
+                
+                Book b = new Book(id, name, category, description, publishYear, publishCompany, entryDate, position, author);
                 listBook.add(b);
 
 

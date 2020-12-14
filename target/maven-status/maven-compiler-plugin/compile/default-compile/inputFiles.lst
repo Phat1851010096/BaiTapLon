@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 E:\BaiTapLon\src\main\java\com\mycompany\demo3\Utils.java
 E:\BaiTapLon\src\main\java\com\mycompany\demo3\DatabaseConnection.java
 E:\BaiTapLon\src\main\java\com\mtd\pojo\Book.java
@@ -14,3 +15,22 @@ E:\BaiTapLon\src\main\java\com\mycompany\demo3\Books.java
 E:\BaiTapLon\src\main\java\com\mtd\services\Utils.java
 E:\BaiTapLon\src\main\java\com\mycompany\demo3\InfoController.java
 E:\BaiTapLon\src\main\java\com\mycompany\demo3\HomePageLogoutController.java
+=======
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mtd\services\BookServices.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\HomePageLogoutController.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\Books.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\HomePageController.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mtd\pojo\Author.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mtd\pojo\Book.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\RegisterPageController.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\HistoryDeptController.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\DatabaseConnection.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mtd\pojo\Reader.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\LoginController.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\InfoController.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mtd\services\ReaderServices.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mtd\services\Utils.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\module-info.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\TraCuuController.java
+C:\Users\dungm\Desktop\click_here_6\New folder\BaiTapLon\src\main\java\com\mycompany\demo3\App.java
+>>>>>>> 1892f61e744ed544ff124e431f08dbbfcecad2e4
