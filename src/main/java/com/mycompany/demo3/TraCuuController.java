@@ -74,6 +74,7 @@ public class TraCuuController implements Initializable {
     @FXML private TextField txt_NhaXuatBan;
     @FXML private TextField txt_NgayNhap;
     @FXML private TextField txt_ViTriSach;
+    @FXML private TextField txt_HienThi;
     
     
     ObservableList<Books> listM;
@@ -95,14 +96,14 @@ public class TraCuuController implements Initializable {
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
             int dem = rs.getInt(1);
-            listBook = FXCollections.observableArrayList();
-            for(int i = 0; i < dem; i++){
-                CheckBox ch = new CheckBox("" + i);
+            
+            
+            
                 
-                UpdateTable();
-                search();
+            UpdateTable();
+            search();
 
-            }
+            
         }catch(SQLException e){
             System.err.println("Loi ket noi!");
         }

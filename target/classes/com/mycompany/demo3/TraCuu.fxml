@@ -58,7 +58,6 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="cbHienThi" layoutX="133.0" layoutY="157.0" prefHeight="25.0" prefWidth="182.0" />
                   <AnchorPane layoutX="339.0" layoutY="144.0" prefHeight="34.0" prefWidth="50.0" />
                   <AnchorPane layoutX="174.0" layoutY="206.0" prefHeight="54.0" prefWidth="144.0">
                      <children>
@@ -93,8 +92,13 @@
                         </TableView>
                      </children>
                   </AnchorPane>
+<<<<<<< HEAD
                   <TextField fx:id="txt_TacGia" layoutX="132.0" layoutY="79.0" prefHeight="25.0" prefWidth="183.0" promptText="Tác giả" />
                   <TextField fx:id="txt_PhanLoai" alignment="TOP_LEFT" layoutX="134.0" layoutY="43.0" prefHeight="25.0" prefWidth="182.0" promptText="Thể Loại" />
+=======
+                  <TextField layoutX="132.0" layoutY="79.0" prefHeight="25.0" prefWidth="183.0" promptText="Tác giả" />
+                  <TextField layoutX="133.0" layoutY="154.0" />
+>>>>>>> d0c7bd9b2b1947e3e36591a804f691c215e07099
                </children>
             </AnchorPane>
         </content>
