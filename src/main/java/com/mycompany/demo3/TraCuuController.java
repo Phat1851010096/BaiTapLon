@@ -89,26 +89,23 @@ public class TraCuuController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        conn = Utils.getConn();
-        String sql = "select count(*) from books ";
-        try{
-            Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery(sql);
-            rs.next();
-            int dem = rs.getInt(1);
-            
-            
-            
-                
+//        conn = Utils.getConn();
+//        String sql = "select count(*) from books ";
+//        try{
+//            Statement stm = conn.createStatement();
+//            ResultSet rs = stm.executeQuery(sql);
+//            rs.next();
+//            int dem = rs.getInt(1);
+// 
             UpdateTable();
             search();
 
-            
-        }catch(SQLException e){
-            System.err.println("Loi ket noi!");
-        }
-        
-       
+//            
+//        }catch(SQLException e){
+//            System.err.println("Loi ket noi!");
+//        }
+//        
+//       
     }  
     
     public void homePageLogoutOnAction(ActionEvent event) throws IOException{
@@ -319,7 +316,7 @@ public class TraCuuController implements Initializable {
                 String lowerCaseFilter = newValue.toLowerCase();
         	if (newValue == null || newValue.isEmpty()) {
            		return true;
-        	} else if (person.getCategory().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+        	} else if (person.getAuthor().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                 		return true; 
                 }
 		else

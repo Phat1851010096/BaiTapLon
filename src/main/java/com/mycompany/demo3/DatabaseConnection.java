@@ -49,7 +49,8 @@ public class DatabaseConnection {
             
             while(rs.next()){
                 list.add(new Books(Integer.parseInt(rs.getString("BookID")), 
-                        rs.getString("BookName"), rs.getString("Category"), 
+                        rs.getString("BookName"), rs.getString("Category"),
+                        rs.getString("AuthorName"),
                         rs.getString("Description"), rs.getDate("PublishYear"), 
                         rs.getString("PublishCompany"), rs.getDate("EntryDate"), 
                         rs.getString("BookPosition")));

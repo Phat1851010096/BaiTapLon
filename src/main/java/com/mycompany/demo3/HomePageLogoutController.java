@@ -26,6 +26,7 @@ import javafx.stage.Stage;
  */
 public class HomePageLogoutController implements Initializable {
 
+
     /**
      * Initializes the controller class.
      */

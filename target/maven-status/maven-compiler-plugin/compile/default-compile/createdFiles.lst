@@ -14,5 +14,8 @@ com\mycompany\demo3\TraCuuController.class
 com\mycompany\demo3\HomePageLogoutController.class
 com\mycompany\demo3\HistoryDeptController.class
 com\mycompany\demo3\LoginController.class
+com\mtd\pojo\Reader$Object.class
 com\mycompany\demo3\Utils.class
+com\mtd\pojo\Reader.class
 com\mtd\services\BookServices.class
+com\mtd\services\ReaderServices.class

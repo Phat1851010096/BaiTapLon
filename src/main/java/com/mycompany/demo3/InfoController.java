@@ -33,25 +33,26 @@ public class InfoController implements Initializable {
      */
     @FXML private TextField txt_MaDocGia;
     @FXML private TextField txt_Ten;
-    @FXML private Date txt_NgaySinh;
-    @FXML private ComboBox txt_GioiTinh;
+    @FXML private TextField txt_NgaySinh;
+    @FXML private TextField txt_GioiTinh;
     @FXML private TextField txt_DoiTuong;
-    @FXML private Date txt_HanThe;
+    @FXML private TextField txt_HanThe;
     @FXML private TextField txt_Email;
     @FXML private TextField txt_SDT;
     @FXML private TextField txt_DiaChi;
-    @FXML private ComboBox txt_Khoa;
+    @FXML private TextField txt_Khoa;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Connection conn = null;
+
         PreparedStatement pst = null;
-        conn= Utils.getConn();
+        Connection conn = Utils.getConn();
+//        String userName = LoginController.
         try{
             Statement stm = conn.createStatement();
             
-            String sql = "SELECT * FROM qlthuvien.readers WHERE Username = ?;";
+            String sql = "SELECT * FROM qlthuvien.readers WHERE Username = '"+ txt_MaDocGia.getText()+"'";
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
             

@@ -19,6 +19,8 @@ import javafx.scene.control.CheckBox;
 
 public class Books {
 
+
+
     public static enum Category {
         VANHOC("Văn học"), KINHTE("Kinh tế"), KYNANG("Kỹ năng"), THIEUNHI("Thiếu nhi"),
         NGOAINGU("Ngoại ngữ"), KYTHUAT("Kỹ thuật"), TIEUTHUYET("Tiểu thuyết");
@@ -37,7 +39,7 @@ public class Books {
     private int bookID;
     private String bookName = null;
     private String category = null;
-    private List<Author> authors;
+    private String author = null;
     private String description = null;
     private Date publishYear = null;
     private String publishCompany = null;
@@ -49,17 +51,20 @@ public class Books {
     public Books (){
     }
     
-    public Books(int bookID, String bookName, String category, CheckBox checkbox) {
+    public Books(int bookID, String bookName, String category, CheckBox checkbox,
+            String Author) {
         this.bookID = bookID;
+        this.author = author;
         this.bookName = bookName;
         this.category = category;  
         this.checkbox = checkbox;
     }
       
-    public Books(String bookName, String category, 
+    public Books(String bookName,String authorName, String category, 
             String description, Date publishYear, String publishCompany, 
             Date entryDate, String bookPosition) {
         this.bookName = bookName;
+        this.author = authorName;
         this.category = category;
         this.description = description;
         this.publishYear = publishYear;
@@ -69,10 +74,10 @@ public class Books {
         this.checkbox = checkbox;
     }
     
-    public Books(int bookID,String bookName, String category, 
+    public Books(int bookID,String bookName,String authorName ,String category, 
             String description, Date publishYear, String publishCompany, 
             Date entryDate, String bookPosition) {
-        this(bookName, category, description, publishYear, publishCompany, entryDate, bookPosition);        
+        this(bookName, authorName,category, description, publishYear, publishCompany, entryDate, bookPosition);        
         this.bookID = bookID;
 
     }
@@ -85,6 +90,7 @@ public class Books {
         str.append(String.format(" - ID: %d", this.getBookID()));
         str.append(String.format(" - Name: %s", this.getBookName()));
         str.append(String.format(" - Category: %s", this.getCategory()));
+        str.append(String.format(" - AuthorName: %s", this.getAuthor()));
         str.append(String.format(" - Description: %s", this.getDescription()));
         if (this.getPublishYear() != null) {
             str.append(String.format(" - Publish year: %s", dateFormat.format(this.getPublishYear())));
@@ -145,19 +151,6 @@ public class Books {
         this.category = category;
     }
 
-    /**
-     * @return the authors
-     */
-    public List<Author> getAuthors() {
-        return authors;
-    }
-
-    /**
-     * @param authors the authors to set
-     */
-    public void setAuthors(List<Author> authors) {
-        this.authors = authors;
-    }
 
     /**
      * @return the description
@@ -241,6 +234,20 @@ public class Books {
      */
     public void setCheckbox(CheckBox checkbox) {
         this.checkbox = checkbox;
+    }
+
+    /**
+     * @return the author
+     */
+    public String getAuthor() {
+        return author;
+    }
+
+    /**
+     * @param author the author to set
+     */
+    public void setAuthor(String author) {
+        this.author = author;
     }
     
 }

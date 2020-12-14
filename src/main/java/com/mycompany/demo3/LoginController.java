@@ -77,12 +77,16 @@ public class LoginController implements Initializable {
     
     @FXML
     private void switchToHomePage() throws IOException {
+        
         App.setRoot("homePage");
     }
     
+
     
+
     //
     public void loginButtonOnAction(ActionEvent event) throws SQLException, IOException, InterruptedException{
+        
         if(usernameTextField.getText().isBlank() == false //Kiem tra username va password co rong hay khong
                 && passwordTextField.getText().isBlank() == false){
              validateLogin();
