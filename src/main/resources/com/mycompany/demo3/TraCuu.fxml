@@ -52,7 +52,6 @@
                         <Font name="System Bold" size="14.0" />
                      </font></Label>
                   <TextField fx:id="txt_TenSach" alignment="TOP_LEFT" layoutX="133.0" layoutY="6.0" prefHeight="25.0" prefWidth="181.0" promptText="Tên Sách" />
-                  <ComboBox fx:id="cbTheLoai" layoutX="133.0" layoutY="44.0" prefHeight="25.0" prefWidth="181.0" promptText="Thể loại" />
                   <TextField fx:id="txt_NamXuatBan" layoutX="134.0" layoutY="118.0" onAction="#getSelected" prefHeight="25.0" prefWidth="184.0" promptText="Năm xuất bản" />
                   <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="11.0" layoutY="159.0" prefHeight="20.0" prefWidth="107.0" text="Hiển thị :">
                      <font>
@@ -94,7 +93,8 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <TextField layoutX="132.0" layoutY="79.0" prefHeight="25.0" prefWidth="183.0" promptText="Tác giả" />
+                  <TextField fx:id="txt_TacGia" layoutX="132.0" layoutY="79.0" prefHeight="25.0" prefWidth="183.0" promptText="Tác giả" />
+                  <TextField fx:id="txt_PhanLoai" alignment="TOP_LEFT" layoutX="134.0" layoutY="43.0" prefHeight="25.0" prefWidth="182.0" promptText="Thể Loại" />
                </children>
             </AnchorPane>
         </content>
@@ -103,7 +103,7 @@
         <columns>
           <TableColumn fx:id="col_BookID" prefWidth="69.0" text="Mã sách" />
           <TableColumn fx:id="col_BookName" prefWidth="95.0" text="Tên sách" />
-            <TableColumn prefWidth="75.0" text="Tác giả" />
+            <TableColumn fx:id="col_Author" prefWidth="75.0" text="Tác giả" />
             <TableColumn fx:id="col_Category" prefWidth="87.66668701171875" text="Thể loại" />
             <TableColumn fx:id="col_Description" prefWidth="113.33331298828125" text="Mô tả" />
             <TableColumn fx:id="col_PublishYear" prefWidth="110.66668701171875" text="Năm xuất bản" />
