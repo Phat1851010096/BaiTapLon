@@ -5,8 +5,13 @@
  */
 package com.mycompany.demo3;
 
+<<<<<<< HEAD
 import java.io.IOException;
 
+=======
+import com.mtd.pojo.Reader;
+import java.io.IOException;
+>>>>>>> 0ca19a07b468e7a82b1555cf9c0e95af839cbed1
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +19,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+<<<<<<< HEAD
+=======
+import java.util.logging.Level;
+import java.util.logging.Logger;
+>>>>>>> 0ca19a07b468e7a82b1555cf9c0e95af839cbed1
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,6 +49,15 @@ public class InfoController implements Initializable {
     @FXML private TextField txt_SDT;
     @FXML private TextField txt_DiaChi;
     @FXML private TextField txt_Khoa;
+    @FXML
+    private void switchTohomePageLogout() throws IOException {
+        App.setRoot("homePageLogout");
+    }
+    
+        
+    public void homePageLogoutOnAction(ActionEvent event) throws IOException{
+        switchTohomePageLogout();
+    }
     
     public static TextField static_MaDocGia;
     
@@ -49,6 +68,7 @@ public class InfoController implements Initializable {
         PreparedStatement pst = null;
         Connection conn = Utils.getConn();
         try{
+<<<<<<< HEAD
             Statement stm = conn.createStatement(); 
             String sql = "SELECT * FROM qlthuvien.readers WHERE Username = '"+ static_MaDocGia +"'";
             pst = conn.prepareStatement(sql);
@@ -63,6 +83,13 @@ public class InfoController implements Initializable {
             pst.setString(9, txt_DiaChi.getText());
             pst.setString(10, txt_Khoa.getText());
             pst.execute();
+=======
+            Statement stm = conn.createStatement();           
+            String sql = "SELECT * FROM qlthuvien.readers WHERE Username = '"+ txt_MaDocGia.getText()+"'";
+            ResultSet rs = stm.executeQuery(sql);
+            rs.next();
+            
+>>>>>>> 0ca19a07b468e7a82b1555cf9c0e95af839cbed1
         } catch(SQLException ex){
             System.err.println("Loi ket noi!");
         }
