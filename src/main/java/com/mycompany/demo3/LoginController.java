@@ -18,20 +18,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
+
 
 /**
  * FXML Controller class
  *
  * @author PHAT NGUYEN
  */
-public class LoginController implements Initializable {
+public class LoginController extends InfoController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -40,19 +39,7 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        File brandingFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3/Images/Logo.png");
-//        //C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3
-//        Image brandingImage = new Image(brandingFile.toURI().toString());
-//        brandingImageView.setImage(brandingImage);
-//        
-//        File lockFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3/Images/o_khoa.png");
-//        Image lockImage = new Image(lockFile.toURI().toString());
-//        lockImageView.setImage(lockImage);
-//        
-//        File bookFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3/Images/123.png");
-//        Image bookImage = new Image(bookFile.toURI().toString());
-//        bookImageView.setImage(bookImage);
-        // TODO
+        static_MaDocGia.setText(usernameTextField.getText());
     }    
     
     @FXML
@@ -82,28 +69,21 @@ public class LoginController implements Initializable {
     }
     
 
-    
-
     //
-    public void loginButtonOnAction(ActionEvent event) throws SQLException, IOException, InterruptedException{
-        
+    public void loginButtonOnAction(ActionEvent event) throws SQLException, IOException, InterruptedException{   
         if(usernameTextField.getText().isBlank() == false //Kiem tra username va password co rong hay khong
                 && passwordTextField.getText().isBlank() == false){
              validateLogin();
         } else {
-            loginMessageLabel.setText("Please enter username and password");
+            loginMessageLabel.setText("Hãy nhập tài khoản hoặc mật khẩu");
         }
     }
     
     //
     public void cancelButtonOnAction(ActionEvent event) throws IOException{
-//        Stage stage = (Stage) cancelButton.getScene().getWindow();
-//        stage.close();
           switchToHomePage();
     }
-    
-    
-    
+
     //
     public void validateLogin() throws SQLException, IOException, InterruptedException{
         DatabaseConnection conn = new DatabaseConnection();//
@@ -121,9 +101,11 @@ public class LoginController implements Initializable {
                 
                 switchToHomePageLogout();
             } else{
-                loginMessageLabel.setText("Invalid login, Please try again!");
+                loginMessageLabel.setText("Lỗi đăng nhập, hãy thử lại!");
             }
         }
-    } 
+    }
+    
+    
 }
 
