@@ -37,9 +37,25 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws ParseException {
-//        BookServices.console_searchBook("", "", "20", "");
-//        System.out.println("OK!");
-        launch();
+        //BookServices.console_searchBook("", "", "20", "");
+        //BookServices.console_timKiemID(16);
+        
+        System.out.println("Start!");
+//        if(BookServices.console_addBook() == true) {
+//            System.out.print("thanh cong");
+//        }
+//        else {
+//            System.out.print("ko duoc");
+//        }
+
+//        Book b = BookServices.console_enterBook();
+//        b.toString();
+//        BookServices.addBook(b);
+        
+        BookServices.deleteBook(21);
+
+        System.out.println("OK!");
+         //launch();
     }
     
 }

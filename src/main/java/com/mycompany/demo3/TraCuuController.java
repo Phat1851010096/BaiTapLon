@@ -47,8 +47,6 @@ public class TraCuuController implements Initializable {
     @FXML
     private TableColumn<Books, String> col_Category;
     @FXML
-    private TableColumn<Books, String> col_Author;
-    @FXML
     private TableColumn<Books, String> col_PublishCompany;
     @FXML
     private TableColumn<Books, String> col_Description;
@@ -69,7 +67,6 @@ public class TraCuuController implements Initializable {
     @FXML private TextField txt_TenSach;
     @FXML private TextField txt_PhanLoai;
     @FXML private TextField txt_MoTa;
-    @FXML private TextField txt_TacGia;
     @FXML private TextField txt_NamXuatBan;
     @FXML private TextField txt_NhaXuatBan;
     @FXML private TextField txt_NgayNhap;
@@ -147,7 +144,6 @@ public class TraCuuController implements Initializable {
     txt_MaSach.setText(col_BookID.getCellData(index).toString());
     txt_TenSach.setText(col_BookName.getCellData(index).toString());
     txt_PhanLoai.setText(col_Category.getCellData(index).toString());
-    txt_TacGia.setText(col_Author.getCellData(index).toString());
     txt_MoTa.setText(col_Description.getCellData(index).toString());
     txt_NamXuatBan.setText(col_PublishYear.getCellData(index).toString());
     txt_NhaXuatBan.setText(col_PublishCompany.getCellData(index).toString());
@@ -210,7 +206,6 @@ public class TraCuuController implements Initializable {
         col_BookID.setCellValueFactory(new PropertyValueFactory<Books, Integer>("BookID"));
         col_BookName.setCellValueFactory(new PropertyValueFactory<Books, String>("BookName"));
         col_Category.setCellValueFactory(new PropertyValueFactory<Books, String>("Category"));
-        col_Author.setCellValueFactory(new PropertyValueFactory<Books, String>("AuthorName"));
         col_Description.setCellValueFactory(new PropertyValueFactory<Books, String>("Description"));
         col_PublishYear.setCellValueFactory(new PropertyValueFactory<Books, Date>("PublishYear"));
         col_PublishCompany.setCellValueFactory(new PropertyValueFactory<Books, String>("PublishCompany"));
@@ -227,7 +222,6 @@ public class TraCuuController implements Initializable {
         col_BookID.setCellValueFactory(new PropertyValueFactory<Books, Integer>("BookID"));
         col_BookName.setCellValueFactory(new PropertyValueFactory<Books, String>("BookName"));
         col_Category.setCellValueFactory(new PropertyValueFactory<Books, String>("Category"));
-        col_Author.setCellValueFactory(new PropertyValueFactory<Books, String>("AuthorName"));
         col_Description.setCellValueFactory(new PropertyValueFactory<Books, String>("Description"));
         col_PublishYear.setCellValueFactory(new PropertyValueFactory<Books, Date>("PublishYear"));
         col_PublishCompany.setCellValueFactory(new PropertyValueFactory<Books, String>("PublishCompany"));
@@ -311,19 +305,7 @@ public class TraCuuController implements Initializable {
 		});
 	});
 	
-        txt_TacGia.textProperty().addListener((observable, oldValue, newValue) -> {
-	filteredData.setPredicate(person -> {
-                String lowerCaseFilter = newValue.toLowerCase();
-        	if (newValue == null || newValue.isEmpty()) {
-           		return true;
-        	} else if (person.getAuthor().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                		return true; 
-                }
-		else
-			return false;
-		});
-	});
-	
+       
 	
         SortedList<Books> sortedData = new SortedList<>(filteredData);  
         sortedData.comparatorProperty().bind(tableBooks.comparatorProperty());  

@@ -35,13 +35,12 @@ public class Book {
     private int bookID;
     private String bookName = null;
     private String category = null;
-    private List<Author> authors;
+    private String author = null;
     private String description = null;
     private Date publishYear = null;
     private String publishCompany = null;
     private Date entryDate = null;
     private String bookPosition = null;
-    private Author author = null;
     
     public Book (){
     }
@@ -52,6 +51,12 @@ public class Book {
         this.category = category;  
     }
       
+    public Book(String bookName, String author, String category, Date publishYear) {
+        this.bookName = bookName;
+        this.category = category;
+         this.publishYear = publishYear;
+         this.author = author;
+    }
     public Book(String bookName, String category, 
             String description, Date publishYear, String publishCompany, 
             Date entryDate, String bookPosition) {
@@ -64,6 +69,13 @@ public class Book {
         this.bookPosition = bookPosition;
     }
     
+        public Book(String bookName, String category, 
+            String description, Date publishYear, String publishCompany, 
+            Date entryDate, String bookPosition, String author) {
+            this(bookName, category, description, publishYear, publishCompany, entryDate, bookPosition);
+            this.author = author;
+        }
+        
     public Book(int bookID,String bookName, String category, 
             String description, Date publishYear, String publishCompany, 
             Date entryDate, String bookPosition) {
@@ -74,7 +86,7 @@ public class Book {
     
    public Book(int bookID,String bookName, String category, 
             String description, Date publishYear, String publishCompany, 
-            Date entryDate, String bookPosition, Author author) {
+            Date entryDate, String bookPosition, String author) {
         this(bookID, bookName, category, description, publishYear, publishCompany, entryDate, bookPosition);
         this.author = author;
    }
@@ -101,7 +113,7 @@ public class Book {
              str.append(String.format(" - Entry date: %s", "NaN"));
         }
         str.append(String.format(" - Book position: %s", this.getBookPosition()));
-        str.append(String.format(" - Author: %s", this.author.getAuthorName()));
+        str.append(String.format(" - Author: %s", this.getAuthor()));
         return str.toString(); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -145,20 +157,6 @@ public class Book {
      */
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    /**
-     * @return the authors
-     */
-    public List<Author> getAuthors() {
-        return authors;
-    }
-
-    /**
-     * @param authors the authors to set
-     */
-    public void setAuthors(List<Author> authors) {
-        this.authors = authors;
     }
 
     /**
@@ -234,14 +232,14 @@ public class Book {
     /**
      * @return the author
      */
-    public Author getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
     /**
      * @param author the author to set
      */
-    public void setAuthor(Author author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 

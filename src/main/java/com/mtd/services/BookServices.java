@@ -12,6 +12,7 @@ import java.sql.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,6 +24,7 @@ public class BookServices {
     
     private static final Connection conn = Utils.getConn();
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private static Scanner scanner = new Scanner(System.in);
     
     public static void console_dsSach() throws ParseException {
         List<Book> ds = new ArrayList<>();
@@ -37,7 +39,12 @@ public class BookServices {
     
     public static void console_timKiemID(int id) {
         Book b = getBookById(id);
-        System.out.println(b.toString());
+        if (b != null){
+            System.out.println(b.toString()); 
+        }
+        else {
+            System.out.println("Khong tim thay");
+        }
     }
     
     public static void console_searchBook(String bookName, String authorName, String publishYear, String category) {
@@ -51,54 +58,78 @@ public class BookServices {
         }
     }
     
+    public static Book console_enterBook() {
+        
+            Book b = new Book();
+            System.out.println("Enter a new book (BookName, Category, Author, "
+                    + "Description, Publish Date, Publish Company, Entry date, Book position\n");
+            System.out.println("Enter BookName: ");
+            b.setBookName(scanner.nextLine().trim());
+            
+            System.out.println("Enter Category:");
+            System.out.println("1. Văn học \t 2. Kinh tế \t 3. Kỹ năng \t 4. Thiếu nhi \t"
+                    + "5. Ngoại ngữ \t 6. Kỹ thuật \t 7. Tiểu thuyết");
+            b.setCategory(scanner.nextLine().trim());
+            
+            System.out.println("Enter author name: ");
+            b.setAuthor(scanner.nextLine().trim());
+            
+            System.out.println("Enter description: ");
+            b.setDescription(scanner.nextLine().trim());
+            
+            System.out.println("Enter Publishing date (yyyy-MM-dd): ");
+        try {
+            b.setPublishYear(dateFormat.parse(scanner.nextLine().trim()));
+        } catch (ParseException ex) {
+            System.err.println("Nhap sai thoi gian!");
+            Logger.getLogger(BookServices.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+            
+             System.out.println("Enter publish company: ");
+            b.setPublishCompany(scanner.nextLine().trim());
+            
+            System.out.println("Enter Entry date (yyyy-MM-dd): ");
+        try {
+            b.setEntryDate(dateFormat.parse(scanner.nextLine().trim()));
+        } catch (ParseException ex) {
+            System.err.println("Nhap sai thoi gian!");
+            Logger.getLogger(BookServices.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            System.out.println("Enter Book position: ");
+            b.setBookPosition(scanner.nextLine().trim());
+             
+            return b;
+//            try {
+//                Book abc = new Book("Tony Buổi Sáng - Trên Đường Băng", Book.Category.KINHTE.getValue(),
+//                        "Khi còn trẻ, hãy ra ngoài nhiều hơn ở nhà.", dateFormat.parse("2017-10-5"),
+//                        "NXB Trẻ", dateFormat.parse("2018-6-5"), "123", "Tony buổi sáng");
+//                System.out.println(abc.getCategory());
+//                return BookServices.addBook(abc);
+//            } catch (ParseException ex) {
+//                System.err.println("Loi console_addBook");
+//                return false;
+//            }
+    }
+    
     public static List<Book> getBooks () throws ParseException {
         List<Book> listBook = new ArrayList<>();
         
         try {   
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT distinct B.*, A.*\n" +
-"FROM qlthuvien.books_authors BA, qlthuvien.books B, qlthuvien.authors A\n" +
-"WHERE B.BookID = BA.BookID AND A.AuthorID = BA.AuthorID\n" +
-"ORDER BY B.BookID ASC");
-
-
-//            while (rs.next()) {
-//                int bookID = rs.getInt("BookID");
-//                String name = rs.getString("BookName");
-//                String category = rs.getString("Category");
-//                //String description = rs.getString("Description");
-//                //Date publishYear = rs.getDate("PublishYear");
-////                java.sql.Date mysqlDate = rs.getDate("PublishYear");
-////                java.util.Date dateConverter = new java.util.Date(mysqlDate.getTime());
-//                //String publishCompany = rs.getString("PublishCompany");
-//                //Date entryDate = rs.getDate("EntryDate");
-////                java.sql.Date mysqlDate2 = rs.getDate("entryDate");
-////                java.util.Date dateConverter2 = new java.util.Date(mysqlDate2.getTime());
-//                //String position = rs.getString("BookPosition");
-//                
-//
-//            Book b = new Book(bookID, name, category);
-//            
-//            
-//                //Book b = new Book(bookID, name, category, description, dateFormat.parse("1976-3-14"), publishCompany, dateFormat.parse("1976-3-14"), position);
-//
-//                listBook.add(b);
-//            }
-//            
+            ResultSet rs = stm.executeQuery("SELECT * FROM qlthuvien.books order by BookID asc");
+         
            while(rs.next()) {
-                int id = rs.getInt("B.BookID");
-                String name = rs.getString("B.BookName");
-                String category = rs.getString("B.Category");
-                String description = rs.getString("B.Description");
-                Date publishYear = rs.getDate("B.PublishYear");
-                String publishCompany = rs.getString("B.PublishCompany");
-                Date entryDate = rs.getDate("B.EntryDate");
-                String position = rs.getString("B.BookPosition");
-                
-                Author author = new Author();
-                author.setAuthorID(rs.getInt("A.AuthorID"));
-                author.setAuthorName(rs.getString("A.AuthorName"));
-                
+                int id = rs.getInt("BookID");
+                String name = rs.getString("BookName");
+                String category = rs.getString("Category");
+                String description = rs.getString("Description");
+                Date publishYear = rs.getDate("PublishYear");
+                String publishCompany = rs.getString("PublishCompany");
+                Date entryDate = rs.getDate("EntryDate");
+                String position = rs.getString("BookPosition");
+                String author = rs.getString("AuthorName");
                 Book b = new Book(id, name, category, description, publishYear, publishCompany, entryDate, position, author);
                 listBook.add(b);
 
@@ -113,8 +144,7 @@ public class BookServices {
     }
     
     public static Book getBookById(int bookID) {
-        Book book1 = new Book();
-        
+        Book b1 = new Book();
         try {
             PreparedStatement stm = conn.prepareStatement("SELECT * FROM Books WHERE BookID = ?");
             stm.setInt(1, bookID);
@@ -130,7 +160,8 @@ public class BookServices {
                 String publishCompany = rs.getString("PublishCompany");
                 Date entryDate = rs.getDate("EntryDate");
                 String position = rs.getString("BookPosition");
-                Book b = new Book(id, name, category, description, publishYear, publishCompany, entryDate, position);
+                String author = rs.getString("AuthorName");
+                Book b = new Book(id, name, category, description, publishYear, publishCompany, entryDate, position, author);
                 return b;
 
 
@@ -138,27 +169,29 @@ public class BookServices {
             
         } catch (SQLException ex) {
             Logger.getLogger(BookServices.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("Loi - BookServices - getbookbyid");
         }
                         
-        return book1;
+        return null;
     }
     
     public static boolean addBook(Book book) {
         boolean flag = false;
         try {
             
-            String addQuery = "INSERT INTO Books(BookName, Category, Description,PublishYear, PublishCompany, EntryDate, BookPosition)"
-                    + " VALUES(?, ?, ?, ?, ?, ?, ?);";    
+            String addQuery = "INSERT INTO Books(BookName, Category, AuthorName, Description,PublishYear, PublishCompany, EntryDate, BookPosition)"
+                    + " VALUES(?, ?, ?, ?, ?, ?, ?, ?);";    
             PreparedStatement stm = conn.prepareStatement(addQuery);           
             conn.setAutoCommit(flag);
             
             stm.setString(1, book.getBookName());
             stm.setString(2, book.getCategory());
-            stm.setString(3, book.getDescription());
-            stm.setDate(4, new java.sql.Date(book.getPublishYear().getTime()));
-            stm.setString(5, book.getPublishCompany());
-            stm.setDate(6, new java.sql.Date(book.getEntryDate().getTime()));
-            stm.setString(7, book.getBookPosition());
+            stm.setString(3, book.getAuthor());
+            stm.setString(4, book.getDescription());
+            stm.setDate(5, new java.sql.Date(book.getPublishYear().getTime()));
+            stm.setString(6, book.getPublishCompany());
+            stm.setDate(7, new java.sql.Date(book.getEntryDate().getTime()));
+            stm.setString(8, book.getBookPosition());
             
             stm.executeUpdate();
             conn.commit();
@@ -221,6 +254,21 @@ public class BookServices {
         } 
 
         return listBook;
+    }
+    
+    public static void deleteBook(int BookID) {
+        try {
+            
+            String deleteQuery = "DELETE FROM qlthuvien.Books WHERE BookID = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(deleteQuery);
+            preparedStatement.setInt(1, BookID);
+            
+            preparedStatement.executeUpdate();
+            
+            System.out.println("\nDelete book success!");
+        } catch (SQLException ex) {
+            System.err.println("\nError at deleteBook! " + ex.getMessage());
+        }
     }
     
     public static void deleteTempInMySQL(int bookID) { 

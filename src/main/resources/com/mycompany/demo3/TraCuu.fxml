@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1024.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.TraCuuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1024.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.TraCuuController">
    <children>
       <AnchorPane prefHeight="73.0" prefWidth="930.0" style="-fx-background-color: lightblue;">
          <children>
@@ -106,7 +106,6 @@
         <columns>
           <TableColumn fx:id="col_BookID" prefWidth="69.0" text="Mã sách" />
           <TableColumn fx:id="col_BookName" prefWidth="95.0" text="Tên sách" />
-            <TableColumn fx:id="col_Author" prefWidth="75.0" text="Tác giả" />
             <TableColumn fx:id="col_Category" prefWidth="87.66668701171875" text="Thể loại" />
             <TableColumn fx:id="col_Description" prefWidth="113.33331298828125" text="Mô tả" />
             <TableColumn fx:id="col_PublishYear" prefWidth="110.66668701171875" text="Năm xuất bản" />
