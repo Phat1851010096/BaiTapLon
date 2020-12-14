@@ -51,28 +51,16 @@
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></Label>
-                  <TextField fx:id="filterTenSach" alignment="TOP_LEFT" layoutX="133.0" layoutY="6.0" prefHeight="25.0" prefWidth="181.0" promptText="Tên Sách" />
+                  <TextField fx:id="txt_TenSach" alignment="TOP_LEFT" layoutX="133.0" layoutY="6.0" prefHeight="25.0" prefWidth="181.0" promptText="Tên Sách" />
                   <ComboBox fx:id="cbTheLoai" layoutX="133.0" layoutY="44.0" prefHeight="25.0" prefWidth="181.0" promptText="Thể loại" />
-                  <TextField layoutX="134.0" layoutY="118.0" prefHeight="25.0" prefWidth="184.0" promptText="Năm xuất bản" />
+                  <TextField fx:id="txt_NamXuatBan" layoutX="134.0" layoutY="118.0" onAction="#getSelected" prefHeight="25.0" prefWidth="184.0" promptText="Năm xuất bản" />
                   <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="11.0" layoutY="159.0" prefHeight="20.0" prefWidth="107.0" text="Hiển thị :">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
                   <ComboBox fx:id="cbHienThi" layoutX="133.0" layoutY="157.0" prefHeight="25.0" prefWidth="182.0" />
-                  <AnchorPane layoutX="339.0" layoutY="144.0" prefHeight="34.0" prefWidth="50.0">
-                     <children>
-                        <Button mnemonicParsing="false">
-                           <graphic>
-                              <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Images/A.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane layoutX="339.0" layoutY="144.0" prefHeight="34.0" prefWidth="50.0" />
                   <AnchorPane layoutX="174.0" layoutY="206.0" prefHeight="54.0" prefWidth="144.0">
                      <children>
                         <Button layoutX="-4.0" mnemonicParsing="false" onAction="#homePageLogoutOnAction" prefHeight="42.0" prefWidth="124.0" text="Back" textFill="#e11a1a">
@@ -111,7 +99,7 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <TableView fx:id="tableBooks" prefHeight="311.0" prefWidth="930.0">
+      <TableView fx:id="tableBooks" onSort="#getSelected" prefHeight="311.0" prefWidth="930.0">
         <columns>
           <TableColumn fx:id="col_BookID" prefWidth="69.0" text="Mã sách" />
           <TableColumn fx:id="col_BookName" prefWidth="95.0" text="Tên sách" />
@@ -122,7 +110,7 @@
             <TableColumn fx:id="col_PublishCompany" prefWidth="166.55560302734375" text="Nhà phát hành" />
             <TableColumn fx:id="col_EntryDate" prefWidth="128.0" text="Ngày nhập hàng" />
             <TableColumn fx:id="col_BookPosition" prefWidth="82.0" text="Vị trí sách" />
-            <TableColumn prefWidth="75.0">
+            <TableColumn fx:id="select" prefWidth="75.0">
                <graphic>
                   <CheckBox mnemonicParsing="false" />
                </graphic>

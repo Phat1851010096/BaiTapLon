@@ -1,7 +1,10 @@
 com\mycompany\demo3\HomePageController.class
+com\mycompany\demo3\Books$Category.class
 com\mtd\pojo\Book$Category.class
 com\mycompany\demo3\App.class
+com\mycompany\demo3\Books.class
 com\mtd\pojo\Book.class
+com\mycompany\demo3\DatabaseConnection.class
 module-info.class
 com\mtd\pojo\Author.class
 com\mtd\services\Utils.class
@@ -11,4 +14,5 @@ com\mycompany\demo3\TraCuuController.class
 com\mycompany\demo3\HomePageLogoutController.class
 com\mycompany\demo3\HistoryDeptController.class
 com\mycompany\demo3\LoginController.class
+com\mycompany\demo3\Utils.class
 com\mtd\services\BookServices.class

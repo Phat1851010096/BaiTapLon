@@ -6,6 +6,9 @@
 package com.mycompany.demo3;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
@@ -21,7 +24,10 @@ public class InfoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Connection conn = null;
+        ResultSet rs = null;
+        PreparedStatement pst = null;
+        
     }    
     
 }

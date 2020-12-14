@@ -10,6 +10,7 @@ import com.mtd.pojo.Author;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import javafx.scene.control.CheckBox;
 
 /**
  *
@@ -17,6 +18,7 @@ import java.util.List;
  */
 
 public class Books {
+
     public static enum Category {
         VANHOC("Văn học"), KINHTE("Kinh tế"), KYNANG("Kỹ năng"), THIEUNHI("Thiếu nhi"),
         NGOAINGU("Ngoại ngữ"), KYTHUAT("Kỹ thuật"), TIEUTHUYET("Tiểu thuyết");
@@ -41,14 +43,17 @@ public class Books {
     private String publishCompany = null;
     private Date entryDate = null;
     private String bookPosition = null;
+    private CheckBox checkbox;
+    
 
     public Books (){
     }
     
-    public Books(int bookID, String bookName, String category) {
+    public Books(int bookID, String bookName, String category, CheckBox checkbox) {
         this.bookID = bookID;
         this.bookName = bookName;
         this.category = category;  
+        this.checkbox = checkbox;
     }
       
     public Books(String bookName, String category, 
@@ -61,6 +66,7 @@ public class Books {
         this.publishCompany = publishCompany;
         this.entryDate = entryDate;
         this.bookPosition = bookPosition;
+        this.checkbox = checkbox;
     }
     
     public Books(int bookID,String bookName, String category, 
@@ -221,6 +227,20 @@ public class Books {
      */
     public void setBookPosition(String bookPosition) {
         this.bookPosition = bookPosition;
+    }
+
+    /**
+     * @return the checkbox
+     */
+    public CheckBox getCheckbox() {
+        return checkbox;
+    }
+
+    /**
+     * @param checkbox the checkbox to set
+     */
+    public void setCheckbox(CheckBox checkbox) {
+        this.checkbox = checkbox;
     }
     
 }
