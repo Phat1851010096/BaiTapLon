@@ -8,8 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import com.mtd.pojo.*;
-import com.mtd.services.*;
 import java.text.ParseException;
 import javafx.scene.layout.Region;
 /**
@@ -37,25 +35,8 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws ParseException {
-        //BookServices.console_searchBook("", "", "20", "");
-        //BookServices.console_timKiemID(16);
-        
-        System.out.println("Start!");
-//        if(BookServices.console_addBook() == true) {
-//            System.out.print("thanh cong");
-//        }
-//        else {
-//            System.out.print("ko duoc");
-//        }
-
-//        Book b = BookServices.console_enterBook();
-//        b.toString();
-//        BookServices.addBook(b);
-        
-        BookServices.deleteBook(21);
-
         System.out.println("OK!");
-         //launch();
+        launch();
     }
     
 }

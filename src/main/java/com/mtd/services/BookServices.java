@@ -256,7 +256,8 @@ public class BookServices {
         return listBook;
     }
     
-    public static void deleteBook(int BookID) {
+    public static
+         void deleteBook(int BookID) {
         try {
             
             String deleteQuery = "DELETE FROM qlthuvien.Books WHERE BookID = ?";

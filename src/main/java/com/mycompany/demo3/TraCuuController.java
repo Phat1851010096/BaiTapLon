@@ -305,7 +305,6 @@ public class TraCuuController implements Initializable {
 		});
 	});
 	
-       
 	
         SortedList<Books> sortedData = new SortedList<>(filteredData);  
         sortedData.comparatorProperty().bind(tableBooks.comparatorProperty());  
