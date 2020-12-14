@@ -5,12 +5,21 @@
  */
 package com.mycompany.demo3;
 
+import com.mtd.pojo.Reader;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -22,12 +31,37 @@ public class InfoController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML private TextField txt_MaDocGia;
+    @FXML private TextField txt_Ten;
+    @FXML private Date txt_NgaySinh;
+    @FXML private ComboBox txt_GioiTinh;
+    @FXML private TextField txt_DoiTuong;
+    @FXML private Date txt_HanThe;
+    @FXML private TextField txt_Email;
+    @FXML private TextField txt_SDT;
+    @FXML private TextField txt_DiaChi;
+    @FXML private ComboBox txt_Khoa;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Connection conn = null;
-        ResultSet rs = null;
         PreparedStatement pst = null;
+        conn= Utils.getConn();
+        try{
+            Statement stm = conn.createStatement();
+            
+            String sql = "SELECT * FROM qlthuvien.readers WHERE Username = ?;";
+            ResultSet rs = stm.executeQuery(sql);
+            rs.next();
+            
+        } catch(SQLException ex){
+            System.err.println("Loi ket noi!");
+        }
         
-    }    
+    
+        
+    } 
+    
     
 }
