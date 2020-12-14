@@ -6,6 +6,7 @@
 package com.mycompany.demo3;
 
 import com.mtd.pojo.Reader;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
@@ -16,6 +17,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -41,6 +43,15 @@ public class InfoController implements Initializable {
     @FXML private TextField txt_SDT;
     @FXML private TextField txt_DiaChi;
     @FXML private TextField txt_Khoa;
+    @FXML
+    private void switchTohomePageLogout() throws IOException {
+        App.setRoot("homePageLogout");
+    }
+    
+        
+    public void homePageLogoutOnAction(ActionEvent event) throws IOException{
+        switchTohomePageLogout();
+    }
     
     
     @Override
