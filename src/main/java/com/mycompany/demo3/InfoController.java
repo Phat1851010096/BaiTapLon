@@ -50,8 +50,7 @@ public class InfoController implements Initializable {
         Connection conn = Utils.getConn();
 //        String userName = LoginController.
         try{
-            Statement stm = conn.createStatement();
-            
+            Statement stm = conn.createStatement();           
             String sql = "SELECT * FROM qlthuvien.readers WHERE Username = '"+ txt_MaDocGia.getText()+"'";
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
