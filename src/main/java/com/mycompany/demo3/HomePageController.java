@@ -28,11 +28,26 @@ public class HomePageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-//        File homeFile = new File("C:/Users/tanph/Documents/netbeanproject/demo3/src/main/java/com/mycompany/demo3/Images/home.png");
-//        Image homeImage = new Image(homeFile.toURI().toString());
-//        homeImageView.setImage(homeImage);
+
     }  
+    
+    @FXML
+    private void switchToTraCuu() throws IOException {
+        App.setRoot("TraCuu");
+    }
+    
+    @FXML
+    private void switchToInfo() throws IOException {
+        App.setRoot("info");
+    }
+    
+        public void traCuuPageOnAction(ActionEvent event) throws IOException{
+        switchToTraCuu();
+    }
+    
+    public void InfoPageOnAction(ActionEvent event) throws IOException{
+        switchToInfo();
+    }
     
     public void loginPageOnAction(ActionEvent event) throws IOException{
         switchToLoginPage();

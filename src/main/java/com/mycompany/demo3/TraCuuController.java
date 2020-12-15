@@ -33,7 +33,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author Diem
  */
-public class TraCuuController implements Initializable {
+public class TraCuuController  implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -94,7 +94,7 @@ public class TraCuuController implements Initializable {
 //            rs.next();
 //            int dem = rs.getInt(1);
 // 
-            UpdateTable();
+//            UpdateTable();
             search();
 
 //            
@@ -141,15 +141,10 @@ public class TraCuuController implements Initializable {
         return;
     }
  
-    txt_MaSach.setText(col_BookID.getCellData(index).toString());
+    
     txt_TenSach.setText(col_BookName.getCellData(index).toString());
     txt_PhanLoai.setText(col_Category.getCellData(index).toString());
-    txt_MoTa.setText(col_Description.getCellData(index).toString());
     txt_NamXuatBan.setText(col_PublishYear.getCellData(index).toString());
-    txt_NhaXuatBan.setText(col_PublishCompany.getCellData(index).toString());
-    txt_NgayNhap.setText(col_EntryDate.getCellData(index).toString());
-    txt_ViTriSach.setText(col_BookPosition.getCellData(index).toString());
-    
     }
 //    
 //    public void Edit (){   
@@ -202,7 +197,6 @@ public class TraCuuController implements Initializable {
     
     
     public void UpdateTable(){
-        
         col_BookID.setCellValueFactory(new PropertyValueFactory<Books, Integer>("BookID"));
         col_BookName.setCellValueFactory(new PropertyValueFactory<Books, String>("BookName"));
         col_Category.setCellValueFactory(new PropertyValueFactory<Books, String>("Category"));
@@ -232,39 +226,6 @@ public class TraCuuController implements Initializable {
         listBook =  Utils.getDatabook();
         tableBooks.setItems(listBook);
         FilteredList<Books> filteredData = new FilteredList<>(listBook, b -> true);  
-//        txt_TenSach.textProperty().addListener((observable, oldValue, newValue) -> {
-//        filteredData.setPredicate(person -> {
-//        if (newValue == null || newValue.isEmpty()) {
-//            return true;
-//        }    
-//            String lowerCaseFilter = newValue.toLowerCase();
-//
-//            if (String.valueOf(person.getBookID()).indexOf(lowerCaseFilter)!=-1 ) {
-//                return true; // Filter matches username
-//            } else if (person.getBookName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-//                return true; 
-//            } else if (person.getCategory().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-//                return true; 
-//            }else if (person.getDescription().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-//                return true; 
-//            } else if (String.valueOf(person.getPublishYear()).indexOf(lowerCaseFilter)!=-1) {
-//                return true; 
-//            } else if (person.getPublishCompany().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-//                return true; 
-//            } else if (String.valueOf(person.getEntryDate()).indexOf(lowerCaseFilter)!=-1) {
-//                return true; 
-//            } else if (String.valueOf(person.getBookPosition()).indexOf(lowerCaseFilter)!=-1) {
-//                return true; 
-//            }  
-//            
-//            else  
-//                 return false; // Does not match.
-//           });
-//        }); 
-        
-	
-        
-	
 	txt_TenSach.textProperty().addListener((observable, oldValue, newValue) -> {
 	filteredData.setPredicate(person -> {
                 String lowerCaseFilter = newValue.toLowerCase();

@@ -9,16 +9,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.HomePageLogoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.HomePageLogoutController">
    <top>
-      <AnchorPane prefHeight="142.0" prefWidth="842.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="167.0" prefWidth="1025.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="homeImageView" fitHeight="109.0" fitWidth="999.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="homeImageView" fitHeight="160.0" fitWidth="1024.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/home.PNG" />
                </image>
             </ImageView>
-            <MenuBar layoutX="1.0" layoutY="109.0" prefHeight="32.0" prefWidth="646.0">
+            <MenuBar layoutY="133.0" prefHeight="32.0" prefWidth="844.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Trang chủ" />
                 <Menu mnemonicParsing="false" text="Tra cứu sách">
@@ -31,8 +31,8 @@
                      </items></Menu>
               </menus>
             </MenuBar>
-            <Button layoutX="648.0" layoutY="110.0" mnemonicParsing="false" onAction="#homePageOnAction" prefHeight="31.0" prefWidth="148.0" text="Đăng xuất" />
-            <ImageView fitHeight="31.0" fitWidth="42.0" layoutX="799.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+            <Button layoutX="843.0" layoutY="131.0" mnemonicParsing="false" onAction="#homePageOnAction" prefHeight="34.0" prefWidth="148.0" text="Đăng xuất" />
+            <ImageView fitHeight="31.0" fitWidth="42.0" layoutX="994.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/contact.jpg" />
                </image>
@@ -40,4 +40,15 @@
          </children>
       </AnchorPane>
    </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="577.0" fitWidth="1024.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/truong.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

@@ -12,6 +12,6 @@ VBox {
 }
 
 VBox.Search {
-    -fx-font-size : 50;
+    -fx-font-size : 70;
     -fx-font-weight : bold;
 }

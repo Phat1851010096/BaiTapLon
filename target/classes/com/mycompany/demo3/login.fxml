@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane style="-fx-background-image: url('E:/123.jpg');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.LoginController">
+<BorderPane prefHeight="711.0" prefWidth="1024.0" style="-fx-background-image: url('E:/123.jpg');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.LoginController">
    <top>
       <AnchorPane prefHeight="124.0" prefWidth="931.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="139.0" fitWidth="930.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="133.0" fitWidth="1024.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/home.PNG" />
                </image>
@@ -25,22 +25,33 @@
          </children>
       </AnchorPane>
    </top>
-   <center>
-      <AnchorPane prefHeight="481.0" prefWidth="930.0" BorderPane.alignment="CENTER">
+   <bottom>
+      <AnchorPane prefHeight="134.0" prefWidth="930.0" style="-fx-background-color: #e4f1fe;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="224.0" layoutY="136.0" text="Tài khoản">
+            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thư viện - Trường đại học Mở thành phố Hồ Chí Minh" />
+            <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Địa chỉ: CS81 - 371 Nguyễn Kiệm P3 Gò Vấp TPHCM" />
+            <Text layoutX="14.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Điện thoại: (028) 3930 0209 - Fax: (028) 3930 0085" />
+            <Text layoutX="14.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail: thuviendhm@ou.edu.vn" />
+            <Text layoutX="558.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <left>
+      <AnchorPane prefHeight="418.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="269.0" layoutY="140.0" text="Tài khoản">
                <font>
                   <Font size="23.0" />
                </font>
             </Label>
-            <Label layoutX="228.0" layoutY="189.0" text="Mật khẩu">
+            <Label layoutX="273.0" layoutY="193.0" text="Mật khẩu">
                <font>
                   <Font size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="usernameTextField" layoutX="368.0" layoutY="137.0" prefHeight="31.0" prefWidth="272.0" />
-            <PasswordField fx:id="passwordTextField" layoutX="370.0" layoutY="190.0" prefHeight="31.0" prefWidth="269.0" />
-            <Button layoutX="324.0" layoutY="292.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="33.0" prefWidth="129.0" style="-fx-background-color: F70B79;" text="Đăng nhập">
+            <TextField fx:id="usernameTextField" layoutX="413.0" layoutY="141.0" prefHeight="31.0" prefWidth="272.0" />
+            <PasswordField fx:id="passwordTextField" layoutX="415.0" layoutY="193.0" prefHeight="31.0" prefWidth="269.0" />
+            <Button layoutX="359.0" layoutY="309.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="33.0" prefWidth="129.0" style="-fx-background-color: F70B79;" text="Đăng nhập">
                <font>
                   <Font size="20.0" />
                </font>
@@ -53,7 +64,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button fx:id="cancelButton" layoutX="557.0" layoutY="292.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="33.0" prefWidth="129.0" style="-fx-background-color: F70B79;" text="Thoát">
+            <Button fx:id="cancelButton" layoutX="592.0" layoutY="309.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="33.0" prefWidth="129.0" style="-fx-background-color: F70B79;" text="Thoát">
                <font>
                   <Font size="20.0" />
                </font>
@@ -66,27 +77,16 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <ImageView fx:id="lockImageView" fitHeight="68.0" fitWidth="78.0" layoutX="461.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="lockImageView" fitHeight="68.0" fitWidth="78.0" layoutX="506.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/o_khoa.png" />
                </image>
             </ImageView>
-            <Label fx:id="loginMessageLabel" layoutX="341.0" layoutY="245.0" prefHeight="21.0" prefWidth="308.0" textFill="#eb0c0c">
+            <Label fx:id="loginMessageLabel" layoutX="364.0" layoutY="249.0" prefHeight="30.0" prefWidth="440.0" textFill="#eb0c0c">
                <font>
                   <Font size="20.0" />
                </font></Label>
          </children>
       </AnchorPane>
-   </center>
-   <bottom>
-      <AnchorPane prefHeight="134.0" prefWidth="930.0" style="-fx-background-color: #e4f1fe;" BorderPane.alignment="CENTER">
-         <children>
-            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thư viện - Trường đại học Mở thành phố Hồ Chí Minh" />
-            <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Địa chỉ: CS81 - 371 Nguyễn Kiệm P3 Gò Vấp TPHCM" />
-            <Text layoutX="14.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Điện thoại: (028) 3930 0209 - Fax: (028) 3930 0085" />
-            <Text layoutX="14.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail: thuviendhm@ou.edu.vn" />
-            <Text layoutX="558.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-         </children>
-      </AnchorPane>
-   </bottom>
+   </left>
 </BorderPane>

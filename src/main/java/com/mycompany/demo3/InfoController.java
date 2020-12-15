@@ -63,33 +63,33 @@ public class InfoController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        static_MaDocGia = txt_MaDocGia;
-        PreparedStatement pst = null;
-        Connection conn = Utils.getConn();
-        try{
-            Statement stm = conn.createStatement(); 
-            String sql = "SELECT * FROM qlthuvien.readers WHERE Username = '"+ static_MaDocGia +"'";
-            pst = conn.prepareStatement(sql);
-            pst.setString(1, txt_MaDocGia.getText());
-            pst.setString(2, txt_Ten.getText());
-            pst.setString(3, txt_NgaySinh.getText());
-            pst.setString(4, txt_GioiTinh.getText());
-            pst.setString(5, txt_DoiTuong.getText());
-            pst.setString(6, txt_HanThe.getText());
-            pst.setString(7, txt_Email.getText());
-            pst.setString(8, txt_SDT.getText());
-            pst.setString(9, txt_DiaChi.getText());
-            pst.setString(10, txt_Khoa.getText());
-            pst.execute();
-            
-           
-            ResultSet rs = stm.executeQuery(sql);
-            rs.next();
-            
-
-        } catch(SQLException ex){
-            System.err.println("Loi ket noi!");
-        }
+//        static_MaDocGia = txt_MaDocGia;
+//        PreparedStatement pst = null;
+//        Connection conn = Utils.getConn();
+//        try{
+//            Statement stm = conn.createStatement(); 
+//            String sql = "SELECT * FROM qlthuvien.readers WHERE Username = '"+ static_MaDocGia +"'";
+//            pst = conn.prepareStatement(sql);
+//            pst.setString(1, txt_MaDocGia.getText());
+//            pst.setString(2, txt_Ten.getText());
+//            pst.setString(3, txt_NgaySinh.getText());
+//            pst.setString(4, txt_GioiTinh.getText());
+//            pst.setString(5, txt_DoiTuong.getText());
+//            pst.setString(6, txt_HanThe.getText());
+//            pst.setString(7, txt_Email.getText());
+//            pst.setString(8, txt_SDT.getText());
+//            pst.setString(9, txt_DiaChi.getText());
+//            pst.setString(10, txt_Khoa.getText());
+//            pst.execute();
+//            
+//           
+//            ResultSet rs = stm.executeQuery(sql);
+//            rs.next();
+//            
+//
+//        } catch(SQLException ex){
+//            System.err.println("Loi ket noi!");
+//        }
 
     } 
     

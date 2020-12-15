@@ -6,7 +6,6 @@
 package com.mycompany.demo3;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -18,7 +17,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -39,7 +37,7 @@ public class LoginController extends InfoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        static_MaDocGia.setText(usernameTextField.getText());
+
     }    
     
     @FXML
@@ -73,6 +71,7 @@ public class LoginController extends InfoController implements Initializable {
     public void loginButtonOnAction(ActionEvent event) throws SQLException, IOException, InterruptedException{   
         if(usernameTextField.getText().isBlank() == false //Kiem tra username va password co rong hay khong
                 && passwordTextField.getText().isBlank() == false){
+//             static_MaDocGia.setText(usernameTextField.getText());
              validateLogin();
         } else {
             loginMessageLabel.setText("Hãy nhập tài khoản hoặc mật khẩu");

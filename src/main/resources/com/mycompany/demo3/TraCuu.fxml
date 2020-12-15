@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1024.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.TraCuuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1024.0" stylesheets="@Tracuu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.TraCuuController">
    <children>
       <AnchorPane prefHeight="73.0" prefWidth="930.0" style="-fx-background-color: lightblue;">
          <children>
@@ -34,32 +34,23 @@
         <content>
           <AnchorPane prefHeight="251.0" prefWidth="900.0" style="-fx-background-color: #e4f1fe;">
                <children>
-                  <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="11.0" layoutY="6.0" prefHeight="20.0" prefWidth="107.0" text="Tên Sách :">
+                  <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="10.0" layoutY="22.0" prefHeight="20.0" prefWidth="107.0" text="Tên Sách :">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font></Label>
-                  <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="11.0" layoutY="44.0" prefHeight="20.0" prefWidth="106.0" text="Thể loại :">
+                  <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="12.0" layoutY="70.0" prefHeight="20.0" prefWidth="106.0" text="Thể loại :">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font></Label>
-                  <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="9.0" layoutY="81.0" text="Tác giả :">
+                  <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="11.0" layoutY="122.0" prefHeight="27.0" prefWidth="137.0" text="Năm xuất bản :">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font></Label>
-                  <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="11.0" layoutY="122.0" prefHeight="20.0" prefWidth="107.0" text="Năm xuất bản :">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font></Label>
-                  <TextField fx:id="txt_TenSach" alignment="TOP_LEFT" layoutX="133.0" layoutY="6.0" prefHeight="25.0" prefWidth="181.0" promptText="Tên Sách" />
-                  <TextField fx:id="txt_NamXuatBan" layoutX="134.0" layoutY="118.0" onAction="#getSelected" prefHeight="25.0" prefWidth="184.0" promptText="Năm xuất bản" />
-                  <Label alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="10.0" layoutY="159.0" prefHeight="20.0" prefWidth="107.0" text="Hiển thị :">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
+                  <TextField fx:id="txt_TenSach" alignment="TOP_LEFT" layoutX="183.0" layoutY="20.0" prefHeight="31.0" prefWidth="211.0" promptText="Tên Sách" />
+                  <TextField fx:id="txt_NamXuatBan" layoutX="184.0" layoutY="120.0" onAction="#getSelected" prefHeight="31.0" prefWidth="211.0" promptText="Năm xuất bản" />
                   <AnchorPane layoutX="174.0" layoutY="206.0" prefHeight="54.0" prefWidth="144.0">
                      <children>
-                        <Button layoutX="-4.0" mnemonicParsing="false" onAction="#homePageLogoutOnAction" prefHeight="42.0" prefWidth="124.0" text="Back" textFill="#e11a1a">
+                        <Button layoutX="-4.0" mnemonicParsing="false" onAction="#homePageLogoutOnAction" prefHeight="42.0" prefWidth="124.0" text="Trở về" textFill="#e11a1a">
                            <graphic>
                               <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -73,28 +64,47 @@
                         </Button>
                      </children>
                   </AnchorPane>
-<!--<<<<<<< HEAD-->
-                  <TextField fx:id="txt_TacGia" layoutX="132.0" layoutY="79.0" prefHeight="25.0" prefWidth="183.0" promptText="Tác giả" />
-                  <TextField fx:id="txt_PhanLoai" alignment="TOP_LEFT" layoutX="134.0" layoutY="43.0" prefHeight="25.0" prefWidth="182.0" promptText="Thể Loại" />
-<!--=======-->
-                  <TextField fx:id="txt_TacGia" layoutX="132.0" layoutY="79.0" prefHeight="25.0" prefWidth="183.0" promptText="Tác giả" />
-                  <TextField layoutX="133.0" layoutY="158.0" prefHeight="25.0" prefWidth="185.0" />
+                  <TextField fx:id="txt_PhanLoai" alignment="TOP_LEFT" layoutX="184.0" layoutY="68.0" prefHeight="31.0" prefWidth="210.0" promptText="Thể Loại" />
+                  <Button layoutX="419.0" layoutY="210.0" mnemonicParsing="false" onAction="#homePageLogoutOnAction" prefHeight="42.0" prefWidth="124.0" text="Thêm" textFill="#e11a1a">
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/add.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="687.0" layoutY="210.0" mnemonicParsing="false" onAction="#homePageLogoutOnAction" prefHeight="42.0" prefWidth="124.0" text="Xóa" textFill="#e11a1a">
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
 <!-->>>>>>> d0c7bd9b2b1947e3e36591a804f691c215e07099-->
                </children>
             </AnchorPane>
         </content>
       </TitledPane>
-      <TableView fx:id="tableBooks" onSort="#getSelected" prefHeight="311.0" prefWidth="930.0">
+      <TableView fx:id="tableBooks" onMouseClicked="#getSelected" prefHeight="311.0" prefWidth="930.0">
         <columns>
-          <TableColumn fx:id="col_BookID" prefWidth="69.0" text="Mã sách" />
-          <TableColumn fx:id="col_BookName" prefWidth="95.0" text="Tên sách" />
-            <TableColumn fx:id="col_Category" prefWidth="87.66668701171875" text="Thể loại" />
-            <TableColumn fx:id="col_Description" prefWidth="113.33331298828125" text="Mô tả" />
-            <TableColumn fx:id="col_PublishYear" prefWidth="110.66668701171875" text="Năm xuất bản" />
-            <TableColumn fx:id="col_PublishCompany" prefWidth="166.55560302734375" text="Nhà phát hành" />
-            <TableColumn fx:id="col_EntryDate" prefWidth="128.0" text="Ngày nhập hàng" />
-            <TableColumn fx:id="col_BookPosition" prefWidth="82.0" text="Vị trí sách" />
-            <TableColumn fx:id="select" prefWidth="75.0">
+          <TableColumn fx:id="col_BookID" prefWidth="96.0" text="Mã sách" />
+          <TableColumn fx:id="col_BookName" prefWidth="85.0" text="Tên sách" />
+            <TableColumn fx:id="col_Category" prefWidth="114.0" text="Thể loại" />
+            <TableColumn fx:id="col_Description" prefWidth="98.0" text="Mô tả" />
+            <TableColumn fx:id="col_PublishYear" prefWidth="126.0" text="Năm xuất bản" />
+            <TableColumn fx:id="col_PublishCompany" prefWidth="141.0" text="Nhà phát hành" />
+            <TableColumn fx:id="col_EntryDate" prefWidth="145.0" text="Ngày nhập hàng" />
+            <TableColumn fx:id="col_BookPosition" prefWidth="109.0" text="Vị trí sách" />
+            <TableColumn fx:id="select" prefWidth="15.0">
                <graphic>
                   <CheckBox mnemonicParsing="false" />
                </graphic>

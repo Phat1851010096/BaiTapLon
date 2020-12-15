@@ -9,16 +9,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="539.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.HomePageController">
+<BorderPane prefHeight="711.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.HomePageController">
    <top>
-      <AnchorPane prefHeight="539.0" prefWidth="745.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="162.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="homeImageView" fitHeight="172.0" fitWidth="842.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="homeImageView" fitHeight="190.0" fitWidth="1024.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/home.PNG" />
                </image>
             </ImageView>
-            <MenuBar layoutX="-1.0" layoutY="104.0" prefHeight="32.0" prefWidth="667.0">
+            <MenuBar layoutY="128.0" prefHeight="32.0" prefWidth="849.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Trang chủ">
                   <items>
@@ -27,18 +27,18 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Tra cứu sách">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem mnemonicParsing="false" onAction="#traCuuPageOnAction" text="Tra cứu" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Cá nhân">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" onAction="#InfoPageOnAction" text="Xem thông tin" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
-            <Button layoutX="666.0" layoutY="101.0" mnemonicParsing="false" onAction="#loginPageOnAction" prefHeight="36.0" prefWidth="133.0" text="Đăng nhập" />
-            <ImageView fitHeight="37.0" fitWidth="38.0" layoutX="799.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+            <Button layoutX="848.0" layoutY="122.0" mnemonicParsing="false" onAction="#loginPageOnAction" prefHeight="38.0" prefWidth="133.0" text="Đăng nhập" />
+            <ImageView fitHeight="37.0" fitWidth="38.0" layoutX="981.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/contact.jpg" />
                </image>
@@ -46,4 +46,15 @@
          </children>
       </AnchorPane>
    </top>
+   <center>
+      <AnchorPane prefHeight="521.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="550.0" fitWidth="1024.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/truong.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

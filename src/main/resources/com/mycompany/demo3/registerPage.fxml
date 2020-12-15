@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="539.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.RegisterPageController">
+<AnchorPane id="AnchorPane" prefHeight="711.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.demo3.RegisterPageController">
    <children>
-      <AnchorPane prefHeight="82.0" prefWidth="850.0" style="-fx-background-color: #E96151;">
+      <AnchorPane prefHeight="82.0" prefWidth="1024.0" style="-fx-background-color: #E96151;">
          <children>
             <ImageView fitHeight="59.0" fitWidth="87.0" layoutX="32.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -26,90 +26,93 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="53.0" layoutY="181.0" prefHeight="20.0" prefWidth="73.0" text="Mã độc giả:">
+      <Label layoutX="97.0" layoutY="237.0" prefHeight="26.0" prefWidth="100.0" text="Mã độc giả:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="53.0" layoutY="219.0" prefHeight="20.0" prefWidth="73.0" text="Họ và tên: ">
+      <Label layoutX="97.0" layoutY="275.0" prefHeight="26.0" prefWidth="94.0" text="Họ và tên: ">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="53.0" layoutY="308.0" prefHeight="20.0" prefWidth="73.0" text="Ngày sinh:">
+      <Label layoutX="97.0" layoutY="364.0" prefHeight="26.0" prefWidth="87.0" text="Ngày sinh:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="53.0" layoutY="353.0" prefHeight="20.0" prefWidth="87.0" text="Đối tượng:">
+      <Label layoutX="97.0" layoutY="409.0" prefHeight="20.0" prefWidth="87.0" text="Đối tượng:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="453.0" layoutY="181.0" text="Email:">
+      <Label layoutX="524.0" layoutY="240.0" text="Email:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="454.0" layoutY="219.0" text="Địa chỉ:">
+      <Label layoutX="525.0" layoutY="278.0" text="Địa chỉ:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="455.0" layoutY="264.0" text="Phone:">
+      <Label layoutX="526.0" layoutY="323.0" text="Phone:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="453.0" layoutY="309.0" text="Faculty:">
+      <Label layoutX="524.0" layoutY="368.0" text="Faculty:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="53.0" layoutY="264.0" text="Giới tính:">
+      <Label layoutX="97.0" layoutY="320.0" prefHeight="26.0" prefWidth="87.0" text="Giới tính:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="450.0" layoutY="353.0" prefHeight="20.0" prefWidth="100.0" text="Ngày đáo hạn:">
+      <Label layoutX="518.0" layoutY="410.0" prefHeight="26.0" prefWidth="117.0" text="Ngày đáo hạn:">
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="149.0" layoutY="176.0" prefHeight="30.0" prefWidth="246.0">
+      <TextField layoutX="220.0" layoutY="235.0" prefHeight="30.0" prefWidth="246.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="149.0" layoutY="214.0" prefHeight="30.0" prefWidth="246.0">
+      <TextField layoutX="220.0" layoutY="273.0" prefHeight="30.0" prefWidth="246.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="550.0" layoutY="176.0" prefHeight="30.0" prefWidth="262.0">
+      <TextField layoutX="652.0" layoutY="235.0" prefHeight="30.0" prefWidth="262.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="550.0" layoutY="214.0" prefHeight="30.0" prefWidth="262.0">
+      <TextField layoutX="652.0" layoutY="273.0" prefHeight="30.0" prefWidth="262.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <DatePicker layoutX="550.0" layoutY="348.0" prefHeight="31.0" prefWidth="262.0" />
-      <TextField layoutX="550.0" layoutY="303.0" prefHeight="30.0" prefWidth="262.0">
+      <DatePicker layoutX="652.0" layoutY="407.0" prefHeight="31.0" prefWidth="262.0" />
+      <TextField layoutX="652.0" layoutY="362.0" prefHeight="30.0" prefWidth="262.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="550.0" layoutY="259.0" prefHeight="30.0" prefWidth="262.0">
+      <TextField layoutX="652.0" layoutY="318.0" prefHeight="30.0" prefWidth="262.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <ComboBox layoutX="149.0" layoutY="259.0" prefHeight="31.0" prefWidth="246.0" />
-      <DatePicker layoutX="149.0" layoutY="303.0" prefHeight="31.0" prefWidth="246.0" />
-      <ComboBox layoutX="149.0" layoutY="348.0" prefHeight="31.0" prefWidth="246.0" />
-      <Button layoutX="331.0" layoutY="461.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="246.0" text="Đăng ký" />
+      <ComboBox layoutX="220.0" layoutY="318.0" prefHeight="31.0" prefWidth="246.0" />
+      <DatePicker layoutX="220.0" layoutY="362.0" prefHeight="31.0" prefWidth="246.0" />
+      <ComboBox layoutX="220.0" layoutY="407.0" prefHeight="31.0" prefWidth="246.0" />
+      <Button layoutX="402.0" layoutY="520.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="246.0" text="Đăng ký">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
    </children>
 </AnchorPane>
