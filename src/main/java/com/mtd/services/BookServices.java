@@ -26,6 +26,77 @@ public class BookServices {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private static Scanner scanner = new Scanner(System.in);
     
+    
+     public static void mainMenu() throws ParseException {
+        Scanner scanner = new Scanner(System.in);
+            boolean loop = true;
+            while (loop == true) {
+                System.out.println("\n======== MENU ========");
+                System.out.print("# 1. Xem danh sach sach          #"
+                             + "\n# 2. Tim kiem theo ID sach       #"
+                             + "\n# 3. Tim kiem nang cao           #"
+                             + "\n# 4. Them sach                   #"
+                             + "\n# 5. Xoa sach                    #"
+                             + "\n# X. Thoat                        #"
+                             + "\n===================================="
+                        + "\n --> ");
+                String chucNangMenuChinh = scanner.nextLine();
+                switch(chucNangMenuChinh) {
+                    case "1" : {
+                            BookServices.console_dsSach();
+                        break;
+                    }
+                    case "2" : {
+                        System.out.println("Nhap ID sach: ");
+                        String id = scanner.nextLine();                       
+                        BookServices.console_timKiemID(id);
+                        break;
+                    }
+                    case "3" : {
+                        System.out.println("Nhap ten sach: ");
+                        String bookName1 = scanner.nextLine();
+                        
+                        System.out.println("Nhap ten tac gia: ");
+                        String authorName1 = scanner.nextLine();
+                        
+                        System.out.println("Nhap nam xuat ban: ");
+                        String publishYear1 = scanner.nextLine();
+                        
+                        System.out.println("Nhap the loai: ");
+                        String category1 = scanner.nextLine();
+                        
+                        BookServices.console_searchBook(bookName1, authorName1, publishYear1, category1);
+                        
+                        break;
+                    }
+                    case "4" : {                       
+                        if (BookServices.console_addBook() == true) {
+                            System.out.println("Them sach thanh cong");
+                        }
+                        else {
+                            System.out.println("Them sach khong thanh cong ");
+                        }
+                        break;
+                    }
+                    case "5" : {                        
+                        System.out.println("Nhap ID sach can xoa: ");
+                        String id = scanner.nextLine();
+                        BookServices.deleteBook(id);
+                        break;
+                    }
+                    default : {
+                        System.out.println("Thoat chuong trinh");
+                        loop = false;
+                        scanner.close();
+                        break;
+                    }
+                }
+                
+            }
+            
+        }
+    
+    
     public static void console_dsSach() throws ParseException {
         List<Book> ds = new ArrayList<>();
         ds = BookServices.getBooks();
@@ -37,7 +108,7 @@ public class BookServices {
         }
     }
     
-    public static void console_timKiemID(int id) {
+    public static void console_timKiemID(String id) {
         Book b = getBookById(id);
         if (b != null){
             System.out.println(b.toString()); 
@@ -51,56 +122,71 @@ public class BookServices {
         List<Book> ds = new ArrayList<>();
         ds = BookServices.searchBook(bookName,authorName, publishYear, category);
         
-        for (Book b1 : ds) {
+        if(ds.size() == 0) {
+            System.out.println("Khong tim thay");
+        }
+        else {
+            System.out.println("Danh sach sach: ");
+            for (Book b1 : ds) {
             System.out.println(b1.toString());
 
             System.out.println("");
         }
+        }
+        
     }
     
-    public static Book console_enterBook() {
-        
-            Book b = new Book();
-            System.out.println("Enter a new book (BookName, Category, Author, "
-                    + "Description, Publish Date, Publish Company, Entry date, Book position\n");
-            System.out.println("Enter BookName: ");
-            b.setBookName(scanner.nextLine().trim());
+    public static boolean console_addBook() {
+
+            try {
+                Book b = new Book();
+                System.out.println("Enter a new book (BookName, Category, Author, "
+                        + "Description, Publish Date, Publish Company, Entry date, Book position\n");
+                System.out.println("Enter BookName: ");
+                b.setBookName(scanner.nextLine().trim());
+
+                System.out.println("Enter Category:");
+                System.out.println("1. Văn học \t 2. Kinh tế \t 3. Kỹ năng \t 4. Thiếu nhi \t"
+                        + "5. Ngoại ngữ \t 6. Kỹ thuật \t 7. Tiểu thuyết");
+                b.setCategory(scanner.nextLine().trim());
+
+                System.out.println("Enter author name: ");
+                b.setAuthor(scanner.nextLine().trim());
+
+                System.out.println("Enter description: ");
+                b.setDescription(scanner.nextLine().trim());
+
+                System.out.println("Enter Publishing date (yyyy-MM-dd): ");
+            try {
+                b.setPublishYear(dateFormat.parse(scanner.nextLine().trim()));
+            } catch (ParseException ex) {
+                System.err.println("Nhap sai thoi gian!");
+                return false;
+            }
+
+                 System.out.println("Enter publish company: ");
+                b.setPublishCompany(scanner.nextLine().trim());
+
+                System.out.println("Enter Entry date (yyyy-MM-dd): ");
+            try {
+                b.setEntryDate(dateFormat.parse(scanner.nextLine().trim()));
+            } catch (ParseException ex) {
+                System.err.println("Nhap sai thoi gian!");
+                return false;
+            }
+
+                System.out.println("Enter Book position: ");
+                b.setBookPosition(scanner.nextLine().trim());
+
+
+                return BookServices.addBook(b);
+
+                
+            } catch (Exception ex) {
+                System.err.println("Loi them sach!");
+                return false;
+            }
             
-            System.out.println("Enter Category:");
-            System.out.println("1. Văn học \t 2. Kinh tế \t 3. Kỹ năng \t 4. Thiếu nhi \t"
-                    + "5. Ngoại ngữ \t 6. Kỹ thuật \t 7. Tiểu thuyết");
-            b.setCategory(scanner.nextLine().trim());
-            
-            System.out.println("Enter author name: ");
-            b.setAuthor(scanner.nextLine().trim());
-            
-            System.out.println("Enter description: ");
-            b.setDescription(scanner.nextLine().trim());
-            
-            System.out.println("Enter Publishing date (yyyy-MM-dd): ");
-        try {
-            b.setPublishYear(dateFormat.parse(scanner.nextLine().trim()));
-        } catch (ParseException ex) {
-            System.err.println("Nhap sai thoi gian!");
-            Logger.getLogger(BookServices.class.getName()).log(Level.SEVERE, null, ex);
-            
-        }
-            
-             System.out.println("Enter publish company: ");
-            b.setPublishCompany(scanner.nextLine().trim());
-            
-            System.out.println("Enter Entry date (yyyy-MM-dd): ");
-        try {
-            b.setEntryDate(dateFormat.parse(scanner.nextLine().trim()));
-        } catch (ParseException ex) {
-            System.err.println("Nhap sai thoi gian!");
-            Logger.getLogger(BookServices.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
-            System.out.println("Enter Book position: ");
-            b.setBookPosition(scanner.nextLine().trim());
-             
-            return b;
 //            try {
 //                Book abc = new Book("Tony Buổi Sáng - Trên Đường Băng", Book.Category.KINHTE.getValue(),
 //                        "Khi còn trẻ, hãy ra ngoài nhiều hơn ở nhà.", dateFormat.parse("2017-10-5"),
@@ -143,11 +229,11 @@ public class BookServices {
         return listBook;
     }
     
-    public static Book getBookById(int bookID) {
+    public static Book getBookById(String BookID) {
         Book b1 = new Book();
         try {
             PreparedStatement stm = conn.prepareStatement("SELECT * FROM Books WHERE BookID = ?");
-            stm.setInt(1, bookID);
+            stm.setString(1,BookID);
             
             ResultSet rs = stm.executeQuery();
             
@@ -205,6 +291,7 @@ public class BookServices {
                 try {
                     System.err.print("Them du lieu bi loi. Rollback!");
                     conn.rollback();
+                    return flag;
             } catch (SQLException ex1) {
                 Logger.getLogger(BookServices.class.getName()).log(Level.SEVERE, null, ex1);
             }
@@ -225,11 +312,17 @@ public class BookServices {
         
         try {   
             Statement stm = conn.createStatement();
-            String sqlQuerry = "SELECT distinct B.*, BA.AuthorName\n"
-            + "FROM qlthuvien.books_authors BA, qlthuvien.books B, qlthuvien.authors A\n"
-            + "WHERE B.BookID = BA.BookID AND A.AuthorID = BA.AuthorID AND\n"
-            + "(B.BookName LIKE \"%" + bookName + "%\" AND A.AuthorName LIKE \"%" + authorName + "%\""
-            + "AND year(B.PublishYear) LIKE \"%" + publishYear + "%\" AND B.Category LIKE \"% " + category +"%\" ) ";
+//            String sqlQuerry = "SELECT distinct B.*, BA.AuthorName\n"
+//            + "FROM qlthuvien.books_authors BA, qlthuvien.books B, qlthuvien.authors A\n"
+//            + "WHERE B.BookID = BA.BookID AND A.AuthorID = BA.AuthorID AND\n"
+//            + "(B.BookName LIKE \"%" + bookName + "%\" AND A.AuthorName LIKE \"%" + authorName + "%\""
+//            + "AND year(B.PublishYear) LIKE \"%" + publishYear + "%\" AND B.Category LIKE \"% " + category +"%\" ) ";
+            
+            String sqlQuerry = "SELECT * FROM books "
+                    + "WHERE (BookName LIKE \"%" + bookName + "%\" "
+                    + "AND AuthorName LIKE \"%" + authorName + "%\" "
+                    + "AND year(PublishYear) LIKE \"%" + publishYear + "%\" "
+                    + "AND Category LIKE \"%" + category + "%\" )";
             
             ResultSet rs = stm.executeQuery(sqlQuerry);
             
@@ -257,18 +350,18 @@ public class BookServices {
     }
     
     public static
-         void deleteBook(int BookID) {
+         void deleteBook(String BookID) {
         try {
             
             String deleteQuery = "DELETE FROM qlthuvien.Books WHERE BookID = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(deleteQuery);
-            preparedStatement.setInt(1, BookID);
+            preparedStatement.setString(1, BookID);
             
             preparedStatement.executeUpdate();
             
             System.out.println("\nDelete book success!");
         } catch (SQLException ex) {
-            System.err.println("\nError at deleteBook! " + ex.getMessage());
+            System.err.println("Nhap sai ID");
         }
     }
     
